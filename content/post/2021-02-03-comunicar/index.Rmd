@@ -1,0 +1,28 @@
+---
+title: Comunicar
+author: luchipaint
+date: '2021-02-03'
+slug: comunicar
+categories: []
+tags: ['comunicar']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+## Configuración básica
+
+### Después de xxxxxxx
+
+## Cambiar los colores
+
+```{r, include=TRUE}
+
+library(RColorBrewer)
+display.brewer.all()
+brewer.pal(n = 4, name = "Set3")
+
+```
+
+

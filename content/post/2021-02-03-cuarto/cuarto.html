@@ -1,0 +1,49 @@
+---
+title: Libertad humana y libertad económica
+author: ~
+date: '2021-02-03'
+slug: cuarto
+categories: []
+tags: []
+---
+
+
+
+<pre class="r"><code>library(readr)
+library(tidyverse)
+
+libertad &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&quot;)
+print(libertad)</code></pre>
+<pre><code>## # A tibble: 1,458 x 10
+##     anio codigo_iso pais  region libertad_humana… libertad_humana…
+##    &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;             &lt;dbl&gt;            &lt;dbl&gt;
+##  1  2016 ALB        Alba… Europ…             7.57               48
+##  2  2016 DZA        Alge… Orien…             5.14              155
+##  3  2016 AGO        Ango… Áfric…             5.64              142
+##  4  2016 ARG        Arge… Latin…             6.47              107
+##  5  2016 ARM        Arme… Cáuca…             7.24               57
+##  6  2016 AUS        Aust… Ocean…             8.58                4
+##  7  2016 AUT        Aust… Europ…             8.41               16
+##  8  2016 AZE        Azer… Cáuca…             6.08              130
+##  9  2016 BHS        Baha… Latin…             7.4                50
+## 10  2016 BHR        Bahr… Orien…             6.85               75
+## # … with 1,448 more rows, and 4 more variables:
+## #   libertad_personal_puntaje &lt;dbl&gt;, libertad_personal_ranking &lt;dbl&gt;,
+## #   libertad_economica_puntaje &lt;dbl&gt;, libertad_economica_ranking &lt;dbl&gt;</code></pre>
+<pre class="r"><code>libertad2 &lt;- libertad %&gt;% 
+  select(anio, region, codigo_iso, pais, libertad_humana_puntaje, libertad_economica_puntaje) %&gt;% 
+  group_by(pais, region) %&gt;% 
+  summarise(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %&gt;% 
+  drop_na()</code></pre>
+<pre class="r"><code>econyhumana &lt;- ggplot(data = libertad2,
+       mapping = aes(x = promediohumana, y = promedioecon, color = pais)) +
+  geom_point() +
+  labs(title = &quot;Relación entre libertad humana y libertad económica&quot;,
+       caption = &quot;Fuente: Datos de miércoles&quot;,
+       x = &quot;Libertad humana&quot;,
+       y = &quot;Libertad económica&quot;) +
+  ggthemes::theme_economist() +
+  theme(legend.position = &quot;none&quot;)
+
+print(econyhumana)</code></pre>
+<p><img src="/post/2021-02-03-cuarto/cuarto_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>

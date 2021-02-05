@@ -1,0 +1,30 @@
+---
+title: Calcular diferencia de votos
+author: luchipaint
+slug: calcular-diferencia-de-votos
+categories: []
+tags: ['Transformar']
+---
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+library(tidyverse)
+library(polAr)
+
+elecciones2003 <- get_election_data("arg", "presi", "gral", 2003) %>%
+  get_names() %>% 
+  print()
+
+caba2003 <- elecciones2003 %>% 
+  filter(name_prov == "CABA") %>% 
+  select(codprov, name_prov, electores, listas, votos, nombre_lista) %>% 
+  group_by(nombre_lista) %>% 
+  summarise(votoscaba = sum(votos)) %>% 
+  arrange(desc(votoscaba)) %>% 
+  print()
+
+caba2003 %>% 
+  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %>% 
+  slice(1:2) %>% 
+  summarise(diferencia = porcentaje - lag(porcentaje)) %>% 
+  print()
+```

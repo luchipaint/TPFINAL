@@ -1,0 +1,46 @@
+library(readr)
+library(tidyverse)
+library(dplyr)
+
+libertad <- readr::read_csv("https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv")
+print(libertad)
+
+libertad2 <- libertad %>% 
+  select(anio, region, codigo_iso, pais, libertad_humana_puntaje, libertad_economica_puntaje) %>% 
+  group_by(pais, region) %>% 
+  summarise(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %>% 
+  drop_na()
+
+econyhumana <- ggplot(data = libertad2,
+       mapping = aes(x = promediohumana, y = promedioecon, color = pais)) +
+  geom_point() +
+  labs(title = "Relación entre libertad humana y libertad económica",
+       caption = "Fuente: Datos de miércoles",
+       x = "Libertad humana",
+       y = "Libertad económica") +
+  ggthemes::theme_economist() +
+  theme(legend.position = "none")
+
+felicidades <- libertad2 %>% 
+  mutate(felicidad = if_else(promediohumana > 7.0, "felices",
+                             "infelices"))
+library(ggforce)
+
+felicidadesgraficar <- felicidades %>% 
+  select(pais, region, felicidad) %>% 
+  group_by(pais, region, felicidad) %>%   # AGRUPAMOS POR TRES VARIABLES
+  mutate(value = n()) %>%  # CONTAMOS CUANTOS PERSONAJES HAY POR GRUPO
+  ungroup() 
+felicidadesparalel <- felicidadesgraficar %>% 
+  gather_set_data(2:3)
+
+ggplot(felicidadesparalel,
+       aes(x, id = id, split = y, value = value)) + #  INICIA GRAFICO
+  geom_parallel_sets(aes(fill = pais), alpha = 0.5, axis.width = 0.1) +
+  geom_parallel_sets_axes(axis.width = 0.1) +
+  geom_parallel_sets_labels(colour = 'white') +
+  ggthemes::theme_economist() +
+  theme(legend.position = "none")
+
+
+

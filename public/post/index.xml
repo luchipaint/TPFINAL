@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on ApRendiendo R</title>
+    <link>https://example.com/post/</link>
+    <description>Recent content in Posts on ApRendiendo R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Gráficos paralelos</title>
+      <link>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</link>
+      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
+      <description>library(readr) library(tidyverse) library(dplyr) libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.57 48 ## 2 2016 DZA Alge… Orien… 5.14 155 ## 3 2016 AGO Ango… Áfric… 5.64 142 ## 4 2016 ARG Arge… Latin… 6.47 107 ## 5 2016 ARM Arme… Cáuca… 7.24 57 ## 6 2016 AUS Aust… Ocean… 8.</description>
+    </item>
+    
+    <item>
+      <title>Comunicar</title>
+      <link>https://example.com/2021-02-03-comunicar/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03-comunicar/</guid>
+      <description> Configuración básica Después de xxxxxxx   Cambiar los colores  library(RColorBrewer) display.brewer.all() brewer.pal(n = 4, name = &amp;quot;Set3&amp;quot;) ## [1] &amp;quot;#8DD3C7&amp;quot; &amp;quot;#FFFFB3&amp;quot; &amp;quot;#BEBADA&amp;quot; &amp;quot;#FB8072&amp;quot;  </description>
+    </item>
+    
+    <item>
+      <title>Libertad humana y libertad económica</title>
+      <link>https://example.com/cuarto/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cuarto/</guid>
+      <description>library(readr) library(tidyverse) libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.57 48 ## 2 2016 DZA Alge… Orien… 5.14 155 ## 3 2016 AGO Ango… Áfric… 5.64 142 ## 4 2016 ARG Arge… Latin… 6.47 107 ## 5 2016 ARM Arme… Cáuca… 7.24 57 ## 6 2016 AUS Aust… Ocean… 8.</description>
+    </item>
+    
+    <item>
+      <title>tercero</title>
+      <link>https://example.com/2021-02-03-tercero/</link>
+      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03-tercero/</guid>
+      <description> library(googlesheets4) gs4_deauth() muestra2 &amp;lt;- read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing&amp;quot;) </description>
+    </item>
+    
+    <item>
+      <title>Análisis de discursos</title>
+      <link>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</guid>
+      <description> library(polAr) library(dplyr) library(tm) library(topicmodels) library(tidyverse) library(ggplot2) library(forcats) library(patchwork) library(wordcloud2) show_available_speech() ## # A tibble: 116 x 2 ## year president ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; ## 1 1854 justo_jose_de_urquiza ## 2 1855 justo_jose_de_urquiza ## 3 1856 justo_jose_de_urquiza ## 4 1857 justo_jose_de_urquiza ## 5 1858 justo_jose_de_urquiza ## 6 1859 justo_jose_de_urquiza ## 7 1860 santiago_derqui ## 8 1861 santiago_derqui ## 9 1862 bartolome_mitre ## 10 1863 bartolome_mitre ## # … with 106 more rows urquiza &amp;lt;- get_speech(year = 1854) frecuencia &amp;lt;- urquiza %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) nubeurquiza &amp;lt;- wordcloud2::wordcloud2(frecuencia) print(nubeurquiza) Alberto alberto &amp;lt;- get_speech(year = 2020) frecuencia2 &amp;lt;- alberto %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) nubealberto &amp;lt;- wordcloud2::wordcloud2(frecuencia2)  Gráficos frecuencia3 &amp;lt;- alberto %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) %&amp;gt;% ungroup() %&amp;gt;% slice(1:5) frecuencia4 &amp;lt;- urquiza %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) %&amp;gt;% ungroup() %&amp;gt;% slice(1:5) barraslaberto &amp;lt;- ggplot(data = frecuencia3, mapping = aes(x = word, y = n)) + geom_col() + ggthemes::theme_economist() + labs(title = &amp;quot;Palabras más usadas por Alberto Fernandez&amp;quot;, subtitle = &amp;quot;Inicio de Asamblea Legislativa 2020&amp;quot;, caption = &amp;quot;Fuente: Datos de polAr&amp;quot;, y = &amp;quot;&amp;quot;, x = &amp;quot;&amp;quot;) barrasurquiza &amp;lt;- ggplot(data = frecuencia4, mapping = aes(x = word, y = n)) + geom_col() + ggthemes::theme_economist() + labs(title = &amp;quot;Palabras más usadas por Urquiza&amp;quot;, subtitle = &amp;quot;Inicio de Asamblea Legislativa 1854&amp;quot;, caption = &amp;quot;Fuente: Datos de polAr&amp;quot;, y = &amp;quot;&amp;quot;, x = &amp;quot;&amp;quot;) barrasurquiza + barraslaberto  </description>
+    </item>
+    
+    <item>
+      <title>Calcular diferencia de votos</title>
+      <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03-calcular-diferencia-de-votos/</guid>
+      <description>library(tidyverse) library(polAr) elecciones2003 &amp;lt;- get_election_data(&amp;quot;arg&amp;quot;, &amp;quot;presi&amp;quot;, &amp;quot;gral&amp;quot;, 2003) %&amp;gt;% get_names() %&amp;gt;% print() ## # A tibble: 480 x 9 ## # Groups: codprov [24] ## category round year codprov name_prov electores listas votos nombre_lista ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; ## 1 presi gral 2003 01 CABA 2590435 0001 2985 Mov. de Integr… ## 2 presi gral 2003 01 CABA 2590435 0003 16216 Unión Cívica R… ## 3 presi gral 2003 01 CABA 2590435 0005 6324 Partido Demócr… ## 4 presi gral 2003 01 CABA 2590435 0014 14828 Partido Obrero ## 5 presi gral 2003 01 CABA 2590435 0022 16371 Partido Humani… ## 6 presi gral 2003 01 CABA 2590435 0030 7302 Partido Social… ## 7 presi gral 2003 01 CABA 2590435 0037 1843 Mov.</description>
+    </item>
+    
+  </channel>
+</rss>

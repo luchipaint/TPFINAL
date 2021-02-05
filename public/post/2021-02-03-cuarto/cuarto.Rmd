@@ -1,0 +1,40 @@
+---
+title: Libertad humana y libertad económica
+author: ~
+date: '2021-02-03'
+slug: cuarto
+categories: []
+tags: []
+---
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+library(readr)
+library(tidyverse)
+
+libertad <- readr::read_csv("https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv")
+print(libertad)
+
+libertad2 <- libertad %>% 
+  select(anio, region, codigo_iso, pais, libertad_humana_puntaje, libertad_economica_puntaje) %>% 
+  group_by(pais, region) %>% 
+  summarise(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %>% 
+  drop_na()
+
+```
+
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+econyhumana <- ggplot(data = libertad2,
+       mapping = aes(x = promediohumana, y = promedioecon, color = pais)) +
+  geom_point() +
+  labs(title = "Relación entre libertad humana y libertad económica",
+       caption = "Fuente: Datos de miércoles",
+       x = "Libertad humana",
+       y = "Libertad económica") +
+  ggthemes::theme_economist() +
+  theme(legend.position = "none")
+
+print(econyhumana)
+
+```

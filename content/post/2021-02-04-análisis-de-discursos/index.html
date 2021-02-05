@@ -1,0 +1,95 @@
+---
+title: Análisis de discursos
+author: ~
+slug: análisis-de-discursos
+categories: []
+tags: []
+---
+
+
+
+<pre class="r"><code>library(polAr)
+library(dplyr)
+library(tm)
+library(topicmodels)
+library(tidyverse)
+library(ggplot2)
+library(forcats)
+library(patchwork)
+library(wordcloud2)
+
+show_available_speech()</code></pre>
+<pre><code>## # A tibble: 116 x 2
+##    year  president            
+##    &lt;chr&gt; &lt;chr&gt;                
+##  1 1854  justo_jose_de_urquiza
+##  2 1855  justo_jose_de_urquiza
+##  3 1856  justo_jose_de_urquiza
+##  4 1857  justo_jose_de_urquiza
+##  5 1858  justo_jose_de_urquiza
+##  6 1859  justo_jose_de_urquiza
+##  7 1860  santiago_derqui      
+##  8 1861  santiago_derqui      
+##  9 1862  bartolome_mitre      
+## 10 1863  bartolome_mitre      
+## # … with 106 more rows</code></pre>
+<pre class="r"><code>urquiza &lt;- get_speech(year = 1854)
+
+frecuencia &lt;- urquiza %&gt;% 
+  group_by(word) %&gt;% 
+  count() %&gt;% 
+  arrange(desc(n))
+
+nubeurquiza &lt;- wordcloud2::wordcloud2(frecuencia)
+
+print(nubeurquiza)</code></pre>
+<div id="alberto" class="section level3">
+<h3>Alberto</h3>
+<pre class="r"><code>alberto &lt;- get_speech(year = 2020)
+
+frecuencia2 &lt;- alberto %&gt;% 
+  group_by(word) %&gt;% 
+  count() %&gt;% 
+  arrange(desc(n))
+
+nubealberto &lt;- wordcloud2::wordcloud2(frecuencia2)</code></pre>
+</div>
+<div id="gráficos" class="section level3">
+<h3>Gráficos</h3>
+<pre class="r"><code>frecuencia3 &lt;- alberto %&gt;% 
+  group_by(word) %&gt;% 
+  count() %&gt;%
+  arrange(desc(n)) %&gt;% 
+  ungroup() %&gt;% 
+  slice(1:5)
+
+frecuencia4 &lt;- urquiza %&gt;% 
+  group_by(word) %&gt;% 
+  count() %&gt;%
+  arrange(desc(n)) %&gt;% 
+  ungroup() %&gt;% 
+  slice(1:5)
+
+barraslaberto &lt;- ggplot(data = frecuencia3,
+                        mapping = aes(x = word, y = n)) +
+  geom_col() +
+  ggthemes::theme_economist() +
+  labs(title = &quot;Palabras más usadas por Alberto Fernandez&quot;,
+       subtitle = &quot;Inicio de Asamblea Legislativa 2020&quot;,
+       caption = &quot;Fuente: Datos de polAr&quot;,
+       y = &quot;&quot;,
+       x = &quot;&quot;)
+
+barrasurquiza &lt;- ggplot(data = frecuencia4,
+                        mapping = aes(x = word, y = n)) +
+  geom_col() +
+  ggthemes::theme_economist() +
+  labs(title = &quot;Palabras más usadas por Urquiza&quot;,
+       subtitle = &quot;Inicio de Asamblea Legislativa 1854&quot;,
+       caption = &quot;Fuente: Datos de polAr&quot;,
+       y = &quot;&quot;,
+       x = &quot;&quot;)
+
+barrasurquiza + barraslaberto</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+</div>

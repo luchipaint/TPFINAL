@@ -70,9 +70,13 @@ pygmentsStyle = "pygments"
     weight = 2
   [[menu.nav]]
     name = "Acerca de"
-    url = "/acerca de/"
+    url = "/acercade/"
     weight = 3
   [[menu.nav]]
     name = "Redes sociales"
     url = "/index.xml"
     weight = 4
+  [[menu.nav]]
+    name = "Datos útiles"
+    url = "/datosutiles/"
+    weight = 5

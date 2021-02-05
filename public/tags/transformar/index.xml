@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transformar on ApRendiendo R</title>
+    <link>https://example.com/tags/transformar/</link>
+    <description>Recent content in Transformar on ApRendiendo R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://example.com/tags/transformar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calcular diferencia de votos</title>
+      <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03-calcular-diferencia-de-votos/</guid>
+      <description>library(tidyverse) library(polAr) elecciones2003 &amp;lt;- get_election_data(&amp;quot;arg&amp;quot;, &amp;quot;presi&amp;quot;, &amp;quot;gral&amp;quot;, 2003) %&amp;gt;% get_names() %&amp;gt;% print() ## # A tibble: 480 x 9 ## # Groups: codprov [24] ## category round year codprov name_prov electores listas votos nombre_lista ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; ## 1 presi gral 2003 01 CABA 2590435 0001 2985 Mov. de Integr… ## 2 presi gral 2003 01 CABA 2590435 0003 16216 Unión Cívica R… ## 3 presi gral 2003 01 CABA 2590435 0005 6324 Partido Demócr… ## 4 presi gral 2003 01 CABA 2590435 0014 14828 Partido Obrero ## 5 presi gral 2003 01 CABA 2590435 0022 16371 Partido Humani… ## 6 presi gral 2003 01 CABA 2590435 0030 7302 Partido Social… ## 7 presi gral 2003 01 CABA 2590435 0037 1843 Mov.</description>
+    </item>
+    
+  </channel>
+</rss>

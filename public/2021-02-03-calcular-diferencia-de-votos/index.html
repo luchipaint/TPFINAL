@@ -1,0 +1,71 @@
+---
+title: Calcular diferencia de votos
+author: luchipaint
+slug: calcular-diferencia-de-votos
+categories: []
+tags: ['Transformar']
+---
+
+
+
+<pre class="r"><code>library(tidyverse)
+library(polAr)
+
+elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot;gral&quot;, 2003) %&gt;%
+  get_names() %&gt;% 
+  print()</code></pre>
+<pre><code>## # A tibble: 480 x 9
+## # Groups:   codprov [24]
+##    category round  year codprov name_prov electores listas votos nombre_lista   
+##    &lt;chr&gt;    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;          
+##  1 presi    gral   2003 01      CABA        2590435 0001    2985 Mov. de Integr…
+##  2 presi    gral   2003 01      CABA        2590435 0003   16216 Unión Cívica R…
+##  3 presi    gral   2003 01      CABA        2590435 0005    6324 Partido Demócr…
+##  4 presi    gral   2003 01      CABA        2590435 0014   14828 Partido Obrero 
+##  5 presi    gral   2003 01      CABA        2590435 0022   16371 Partido Humani…
+##  6 presi    gral   2003 01      CABA        2590435 0030    7302 Partido Social…
+##  7 presi    gral   2003 01      CABA        2590435 0037    1843 Mov. por la Di…
+##  8 presi    gral   2003 01      CABA        2590435 0050   50703 Partido Social…
+##  9 presi    gral   2003 01      CABA        2590435 0051    4264 Partido Popula…
+## 10 presi    gral   2003 01      CABA        2590435 0053   15948 Conf. Para que…
+## # … with 470 more rows</code></pre>
+<pre class="r"><code>caba2003 &lt;- elecciones2003 %&gt;% 
+  filter(name_prov == &quot;CABA&quot;) %&gt;% 
+  select(codprov, name_prov, electores, listas, votos, nombre_lista) %&gt;% 
+  group_by(nombre_lista) %&gt;% 
+  summarise(votoscaba = sum(votos)) %&gt;% 
+  arrange(desc(votoscaba)) %&gt;% 
+  print()</code></pre>
+<pre><code>## # A tibble: 20 x 2
+##    nombre_lista                            votoscaba
+##    &lt;chr&gt;                                       &lt;dbl&gt;
+##  1 Al. Mov. Fed. P/Recrear el Crecimiento     503800
+##  2 Al. Afirm.para una Rep. Igualitaria        386955
+##  3 Al. Frente para la Victoria                379779
+##  4 Al. Frente por la Lealtad                  312606
+##  5 Al. Frente Movimiento Popular              160767
+##  6 Al. Izquierda Unida                         56461
+##  7 Partido Socialista                          50703
+##  8 nulos                                       26795
+##  9 Partido Humanista                           16371
+## 10 Unión Cívica Radical                        16216
+## 11 Conf. Para que se Vayan Todos               15948
+## 12 Partido Obrero                              14828
+## 13 blancos                                     11728
+## 14 Al. Tiempo de Cambios                       11116
+## 15 Partido Socialista Auténtico                 7302
+## 16 Partido Demócrata Cristiano                  6324
+## 17 Partido Popular de la Reconstrucción         4264
+## 18 Al. Unidos o Dominados                       3052
+## 19 Mov. de Integración y Desarrollo             2985
+## 20 Mov. por la Dignidad y la Independencia      1843</code></pre>
+<pre class="r"><code>caba2003 %&gt;% 
+  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %&gt;% 
+  slice(1:2) %&gt;% 
+  summarise(diferencia = porcentaje - lag(porcentaje)) %&gt;% 
+  print()</code></pre>
+<pre><code>## # A tibble: 2 x 1
+##   diferencia
+##        &lt;dbl&gt;
+## 1      NA   
+## 2      -5.87</code></pre>

@@ -41,11 +41,11 @@ pygmentsStyle = "pygments"
 
   # Header colors
   header_heading_color = "#fff"
-  header_background_color = "#8DD3C7"
-  header_background_color_secondary = "#FFFFB3"
+  header_background_color = "#7a8dff"
+  header_background_color_secondary = "#2c45da"
 
   # Text colors
-  section_headings_color = "#BEBADA"
+  section_headings_color = "#010f5f"
   body_text_color = "#606c71"
   body_link_color = "#FB8072"
   blockquote_text_color = "#819198"
@@ -70,13 +70,9 @@ pygmentsStyle = "pygments"
     weight = 2
   [[menu.nav]]
     name = "Acerca de"
-    url = "/acercade/"
+    url = "/about/"
     weight = 3
   [[menu.nav]]
-    name = "Redes sociales"
-    url = "/index.xml"
+    name = "Twitter"
+    url = "https://twitter.com/luchipaint"
     weight = 4
-  [[menu.nav]]
-    name = "Datos útiles"
-    url = "/datosutiles/"
-    weight = 5

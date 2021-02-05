@@ -1,7 +1,7 @@
 ---
-title: Comunicar
+title: Armar un (pequeño y simple) sitio web
 author: luchipaint
-date: '2021-02-03'
+#date: '2021-02-03'
 slug: comunicar
 categories: []
 tags: ['comunicar']
@@ -11,9 +11,9 @@ tags: ['comunicar']
 knitr::opts_chunk$set(collapse = TRUE)
 ```
 
-## Configuración básica
+## Cómo fue armado este blog
 
-### Después de xxxxxxx
+# Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están bien descriptos [acá](link:)
 
 ## Cambiar los colores
 

@@ -1,5 +1,10 @@
 ---
-title: Acerca de
+title: "Acerca de"
 ---
 
-###Este blog fue creado por Lucila Pinto, alumna de #MetodosCiPol, también conocida como Herramientas y xxxx para el Análisis Político, para reflejar los contenidos aprendidos durante la cursada.
+Este blog fue creado por Lucila Pinto, alumna de #MetodosCiPol, también conocida como Herramientas Cuantitativas para el Análisis Político, para reflejar los contenidos aprendidos durante la cursada.
+
+Lucila es periodista y está terminando una Maestría en Ciencia Política en la Universidad Torcuato DiTella. Como periodista, escribió artículos, crónicas y relatos en La Nación Revista, La Nación, Para Ti, La Agenda y Clarín, entre otros. Trabaja como project manager de productos digitales y en comunicación de políticas públicas.
+
+Para leer más sobre cómo fue creado este blog, [hacé clic acá](/2021-02-03-comunicar/).
+

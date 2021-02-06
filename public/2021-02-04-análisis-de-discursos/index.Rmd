@@ -1,6 +1,7 @@
 ---
 title: Análisis de discursos
 author: ~
+date: '2021-01-24'
 slug: análisis-de-discursos
 categories: []
 tags: []

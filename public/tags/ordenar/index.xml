@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ordenar on ApRendiendo R</title>
+    <link>https://example.com/tags/ordenar/</link>
+    <description>Recent content in ordenar on ApRendiendo R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/ordenar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calcular diferencia de votos</title>
+      <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-03-calcular-diferencia-de-votos/</guid>
+      <description>Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos.
+El primer paso fue prender las librerías:
+library(tidyverse) #para los verbos de dyplir y usar ggplot, entre otras cosas library(polAr) #para obtener los datos de las elecciones Después cree una nueva base de datos (elecciones2003) a partir de los datos de las elecciones presidenciales de 2003, y una nueva (caba2003) en la que:</description>
+    </item>
+    
+  </channel>
+</rss>

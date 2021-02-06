@@ -1,6 +1,7 @@
 ---
 title: Calcular diferencia de votos
 author: luchipaint
+date: '2021-01-10'
 slug: calcular-diferencia-de-votos
 categories: []
 tags: ['ordenar','transformar', 'visualizar']
@@ -21,7 +22,7 @@ Después cree una nueva base de datos (elecciones2003) a partir de los datos de 
 
 + apliqué un filtro para trabajar con los resultados de la Ciudad de Buenos Aires
 + elegí las variables con las que me interesaba trabajar
-+ calculé los porcentajes de votos obtenidos por cada lista
++ sumé los votos obtenidos por cada lista
 + los ordené en orden descendente
 
 ```{r, include=TRUE, warning=FALSE, message=FALSE}
@@ -40,14 +41,27 @@ caba2003 <- elecciones2003 %>% #creo una nueva base para CABA
 
 ```
 
-```{r, include=TRUE, warning=FALSE, message=FALSE}
-caba2003 %>% 
-  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %>% 
-  slice(1:2) %>% 
-  summarise(diferencia = porcentaje - lag(porcentaje)) %>% 
-  print()
+En el siguiente paso, armé una base más corta, sólo con las dos listas que más votos obtuvieron y sus porcentajes, y calculé la diferencia de votos.
 
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+caba2003_corta <- caba2003 %>% #nueva base, más corta
+  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %>% #calculo porcentaje
+  slice(1:2) %>% #me quedo con las primeras dos observaciones
+  mutate(diferencia = porcentaje - lag(porcentaje)) %>% #al porcentaje de la primera le resto el de la segunda
+  print()
 ```
 
+Para terminar, armé un gráfico de barras muy simple con los resultados, expresados en porcentajes.
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+ggplot(data = caba2003_corta,
+       mapping = aes(x = nombre_lista, y = porcentaje))+
+  geom_col() +
+  ggthemes::theme_economist() +
+  labs(title = "Diferencia entre los dos primeros candidatos",
+       caption = "Fuente: Datos de polAr",
+       y = "",
+       x = "")
 
 ```

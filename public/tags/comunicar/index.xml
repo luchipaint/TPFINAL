@@ -6,14 +6,25 @@
     <description>Recent content in comunicar on ApRendiendo R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/comunicar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/comunicar/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Comunicar</title>
+      <title>Geolocalizar discursos</title>
+      <link>https://example.com/2021-02-05-leaflet/</link>
+      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-05-leaflet/</guid>
+      <description>En la clase 8, que vi grabada porque ese día no tenía internet, el Tucu hizo un ejemplo de mapas interactivos con Yerba Buena, Tucumán. Mandé una foto de la pantalla a mi familia, porque vivimos en Yerba Buena hasta 1994.  Yo era muy chica para acordarme dónde vivía, pero mi hermano identificó la casa en la capturanque mandé. Y mi madre confirmó.</description>
+    </item>
+    
+    <item>
+      <title>Armar un (pequeño y simple) sitio web</title>
       <link>https://example.com/2021-02-03-comunicar/</link>
       <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/2021-02-03-comunicar/</guid>
-      <description> Configuración básica Después de xxxxxxx   Cambiar los colores  library(RColorBrewer) display.brewer.all() brewer.pal(n = 4, name = &amp;quot;Set3&amp;quot;) ## [1] &amp;quot;#8DD3C7&amp;quot; &amp;quot;#FFFFB3&amp;quot; &amp;quot;#BEBADA&amp;quot; &amp;quot;#FB8072&amp;quot;  </description>
+      <description>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados acá, pero voy a dejar a continuación algunos detalles más específicos de la configuración.
+Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &amp;quot;about&amp;quot; por &amp;quot;acerca de&amp;quot;. Para eso, modifiqué parámetros en el archivo config.toml:
+ Cambiar los colores El theme elegido (de toda esta lista (link) fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración.</description>
     </item>
     
   </channel>

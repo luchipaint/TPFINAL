@@ -1,133 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Hugo 0.78.2" />
-  <link rel="stylesheet" href="https://example.com/css/normalize.css">
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  
-  
-  
-  <link rel="stylesheet" href="https://example.com/css/cayman.552ccd1325af01dc046b8ba2d4fee6c0716408ebe71150b65039d33bebf30632.css">
-  
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-  
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
-
-  <title>Comunicar | ApRendiendo R</title>
-</head>
-
-<body>
-  <section class="page-header">
-  <h1 class="project-name">
-    ApRendiendo R
-  </h1>
-  <h2 class="project-tagline">
-    Leer / ordenar / transformar / visualizar / comunicar
-  </h2>
-  <nav>
-    
-    
-      
-      
-      
-      
-      <a href="/" class="btn">Blog</a>
-    
-      
-      
-      
-      
-      <a href="/tags/" class="btn">Tags</a>
-    
-      
-      
-      
-      
-      <a href="/acercade/" class="btn">Acerca de</a>
-    
-      
-      
-      
-      
-      <a href="/index.xml" class="btn">Redes sociales</a>
-    
-      
-      
-      
-      
-      <a href="/datosutiles/" class="btn">Datos útiles</a>
-    
-  </nav>
-</section>
-
-  <section class="main-content">
-    
-  <h1>Comunicar</h1>
-  <div>
-    
-    <strong>Publish date: </strong>03-02-2021
-  </div>
-  
-  
-    <div>
-      <strong>Tags: </strong>
-      
-        
-        
-        
-      
-      <a href="https://example.com/tags/comunicar/">comunicar</a>
-    </div>
-  
-  
+---
+title: Armar un (pequeño y simple) sitio web
+author: luchipaint
+date: '2021-02-03'
+slug: comunicar
+categories: []
+tags: ['comunicar']
+---
 
 
-<div id="configuración-básica" class="section level2">
-<h2>Configuración básica</h2>
-<div id="después-de-xxxxxxx" class="section level3">
-<h3>Después de xxxxxxx</h3>
+
+<p>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados <a href="%22https://bookdown.org/yihui/blogdown/%22">acá</a>, pero voy a dejar a continuación algunos detalles más específicos de la configuración.</p>
+<div id="argentinizarlo" class="section level3">
+<h3>Argentinizarlo</h3>
+<p>Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &quot;about&quot; por &quot;acerca de&quot;. Para eso, modifiqué parámetros en el archivo config.toml:</p>
+<p><img src="index_files/colores.png" width="100%" /></p>
 </div>
-</div>
-<div id="cambiar-los-colores" class="section level2">
-<h2>Cambiar los colores</h2>
-<pre class="r"><code>
-library(RColorBrewer)
-display.brewer.all()</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>brewer.pal(n = 4, name = &quot;Set3&quot;)
+<div id="cambiar-los-colores" class="section level3">
+<h3>Cambiar los colores</h3>
+<p>El theme elegido (de toda esta lista (link) fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración. Uno de ellos fue cambiar los colores, que eran así:</p>
+<p><img src="index_files/cayman.png" width="100%" /></p>
+<p>Para tener a mano los códigos HEX, y ya organizados en paletas de colores, hice lo siguiente:</p>
+<pre class="r"><code>library(RColorBrewer) #prendo librería
+display.brewer.all() #le pido que me muestre los códigos HEX</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>brewer.pal(n = 4, name = &quot;Set3&quot;) #le pido que me de los códigos de los primeros cuatro colores de la paleta Set 3
 ## [1] &quot;#8DD3C7&quot; &quot;#FFFFB3&quot; &quot;#BEBADA&quot; &quot;#FB8072&quot;</code></pre>
+<p>En el proceso se vivieron momentos estéticamente complicados, como este:</p>
+<p><img src="index_files/complicado.png" width="100%" /></p>
+<p>Pero llegamos a un resultado un poco más sobrio. Los códigos usados son estos:</p>
+<p><img src="index_files/colores.png" width="100%" /></p>
 </div>
-
-  
-
-  
-
-
-
-    <footer class="site-footer">
-  <span class="site-footer-credits">
-    Hecho con <a href="https://gohugo.io/">Hugo</a>. Theme por <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployado en <a href="https://www.netlify.com/">Netlify</a>.
-  </span>
-</footer>
-
-  </section>
-  
-  
-  <script>
-  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-  ga('create', 'UA-123456789-1', 'auto');
-  ga('send', 'pageview');
-  </script>
-  <script async src='https://www.google-analytics.com/analytics.js'></script>
-  
-
-</body>
-</html>

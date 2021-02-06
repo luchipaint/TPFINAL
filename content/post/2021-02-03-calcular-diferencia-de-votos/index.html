@@ -1,6 +1,7 @@
 ---
 title: Calcular diferencia de votos
 author: luchipaint
+date: '2021-01-10'
 slug: calcular-diferencia-de-votos
 categories: []
 tags: ['ordenar','transformar', 'visualizar']
@@ -16,7 +17,7 @@ library(polAr) #para obtener los datos de las elecciones</code></pre>
 <ul>
 <li>apliqué un filtro para trabajar con los resultados de la Ciudad de Buenos Aires</li>
 <li>elegí las variables con las que me interesaba trabajar</li>
-<li>calculé los porcentajes de votos obtenidos por cada lista</li>
+<li>sumé los votos obtenidos por cada lista</li>
 <li>los ordené en orden descendente</li>
 </ul>
 <pre class="r"><code>elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot;gral&quot;, 2003) %&gt;% #obtengo datos desde polAR y creo base nuevo
@@ -67,14 +68,24 @@ library(polAr) #para obtener los datos de las elecciones</code></pre>
 ## 18 Al. Unidos o Dominados                       3052
 ## 19 Mov. de Integración y Desarrollo             2985
 ## 20 Mov. por la Dignidad y la Independencia      1843</code></pre>
-<pre class="r"><code>caba2003 %&gt;% 
-  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %&gt;% 
-  slice(1:2) %&gt;% 
-  summarise(diferencia = porcentaje - lag(porcentaje)) %&gt;% 
+<p>En el siguiente paso, armé una base más corta, sólo con las dos listas que más votos obtuvieron y sus porcentajes, y calculé la diferencia de votos.</p>
+<pre class="r"><code>caba2003_corta &lt;- caba2003 %&gt;% #nueva base, más corta
+  mutate(porcentaje = votoscaba/sum(votoscaba)*100) %&gt;% #calculo porcentaje
+  slice(1:2) %&gt;% #me quedo con las primeras dos observaciones
+  mutate(diferencia = porcentaje - lag(porcentaje)) %&gt;% #al porcentaje de la primera le resto el de la segunda
   print()</code></pre>
-<pre><code>## # A tibble: 2 x 1
-##   diferencia
-##        &lt;dbl&gt;
-## 1      NA   
-## 2      -5.87</code></pre>
-<p>```</p>
+<pre><code>## # A tibble: 2 x 4
+##   nombre_lista                           votoscaba porcentaje diferencia
+##   &lt;chr&gt;                                      &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;
+## 1 Al. Mov. Fed. P/Recrear el Crecimiento    503800       25.3      NA   
+## 2 Al. Afirm.para una Rep. Igualitaria       386955       19.4      -5.87</code></pre>
+<p>Para terminar, armé un gráfico de barras muy simple con los resultados, expresados en porcentajes.</p>
+<pre class="r"><code>ggplot(data = caba2003_corta,
+       mapping = aes(x = nombre_lista, y = porcentaje))+
+  geom_col() +
+  ggthemes::theme_economist() +
+  labs(title = &quot;Diferencia entre los dos primeros candidatos&quot;,
+       caption = &quot;Fuente: Datos de polAr&quot;,
+       y = &quot;&quot;,
+       x = &quot;&quot;)</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>

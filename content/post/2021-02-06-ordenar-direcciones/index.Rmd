@@ -1,0 +1,51 @@
+---
+title: 2. Ordenar direcciones
+author: ~
+date: '2021-01-10'
+slug: ordenar-direcciones
+categories: []
+tags: []
+---
+
+### 1. Prendo librerías
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+library(googlesheets4) #para importar datos
+gs4_deauth() #para que google sheets no sea interactiva
+library(tidyverse) #para transformar y ordenar los datos
+
+```
+
+### 2. Importo datos
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+muestra2 <- read_sheet("https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing") %>% 
+  print() #importo datos
+```
+
+### 3. Separo columnas
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+muestraseparada <- muestra2 %>% 
+  as_tibble() %>% 
+  separate(col = dire,
+           into = c("calle", "depto", "prov"),
+           sep = ",") %>% 
+  print() #creo una base nueva, con los columnas ya separadas
+
+```
+
+### 4. Limpio direcciones
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+muestralimpia <- muestraseparada %>% 
+  mutate(across(.cols = c(depto,prov),
+                .fns = str_trim), #emprolijo a través de sacar los espacios
+         numero = str_remove_all(calle, pattern = "\\D+"),
+         calle = str_remove_all(calle, pattern = "\\d+")) %>% 
+  print() #elimino números de "calle" y creo una nueva variable con los números
+```
+
+

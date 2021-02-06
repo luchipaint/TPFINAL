@@ -21,7 +21,7 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
-  <title>Análisis de discursos | ApRendiendo R</title>
+  <title>6. Análisis de discursos | ApRendiendo R</title>
 </head>
 
 <body>
@@ -70,27 +70,56 @@
 
   <section class="main-content">
     
-  <h1>Análisis de discursos</h1>
+  <h1>6. Análisis de discursos</h1>
   <div>
     
-    <strong>Publish date: </strong>24-01-2021
+    <strong>Publish date: </strong>02-02-2021
   </div>
   
   
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://example.com/tags/leer/">Leer</a>, <a href="https://example.com/tags/ordenar/">Ordenar</a>, <a href="https://example.com/tags/transfomar/">Transfomar</a>, <a href="https://example.com/tags/visualizar/">Visualizar</a>
+    </div>
+  
   
 
 
-<pre class="r"><code>library(polAr)
-library(dplyr)
-library(tm)
-library(topicmodels)
+<p>En este posteo, voy a intentar un análisis muy simple de las palabras más utilizadas en dos discursos de apertura de la asamblea legislativa muy particulares:</p>
+<ul>
+<li>el más antiguo, pronunciado por Justo José de Urquiza en 1854 (en ese entonces, ante el llamado &quot;Congreso Legislativo Federal&quot;)</li>
+<li>el más reciente, pronunciado por Alberto Fernández en 2020</li>
+</ul>
+<p>Para hacerlo, me voy a valer de los datos de la librería polAr, que ya cuenta con los discursos tokenizados.</p>
+<div id="prendo-librerías" class="section level3">
+<h3>1. Prendo librerías</h3>
+<pre class="r"><code>library(polAr) #para obtener los discursos tokenizados
 library(tidyverse)
 library(ggplot2)
-library(forcats)
-library(patchwork)
-library(wordcloud2)
-
-show_available_speech()</code></pre>
+library(patchwork) #para unir los dos gráficos de barras
+library(wordcloud2) #para crear las nubes de palabras
+library(webshot) #para que muestre nubes de palabras (spoiler: no funcionó)</code></pre>
+</div>
+<div id="creo-una-nube-de-palabras-con-los-términos-más-utilizados-por-urquiza." class="section level3">
+<h3>2. Creo una nube de palabras con los términos más utilizados por Urquiza.</h3>
+<pre class="r"><code>show_available_speech()</code></pre>
 <pre><code>## # A tibble: 116 x 2
 ##    year  president            
 ##    &lt;chr&gt; &lt;chr&gt;                
@@ -110,24 +139,56 @@ show_available_speech()</code></pre>
 frecuencia &lt;- urquiza %&gt;% 
   group_by(word) %&gt;% 
   count() %&gt;% 
-  arrange(desc(n))
-
-nubeurquiza &lt;- wordcloud2::wordcloud2(frecuencia)
+  arrange(desc(n)) %&gt;% 
+  print()</code></pre>
+<pre><code>## # A tibble: 4,858 x 2
+## # Groups:   word [4,858]
+##    word              n
+##    &lt;chr&gt;         &lt;int&gt;
+##  1 gobierno        112
+##  2 buenos           58
+##  3 confederacion    58
+##  4 nacional         54
+##  5 provincias       53
+##  6 aires            50
+##  7 constitucion     45
+##  8 pueblos          44
+##  9 provincia        42
+## 10 república        42
+## # … with 4,848 more rows</code></pre>
+<pre class="r"><code>nubeurquiza &lt;- wordcloud2::wordcloud2(frecuencia)
 
 print(nubeurquiza)</code></pre>
-<div id="alberto" class="section level3">
-<h3>Alberto</h3>
+<p><img src="index_files/nubeurquiza.png" width="100%" /> ### 3. Creo una nube de palabras con los términos más utilizados por Alberto Fernández.</p>
 <pre class="r"><code>alberto &lt;- get_speech(year = 2020)
 
 frecuencia2 &lt;- alberto %&gt;% 
   group_by(word) %&gt;% 
   count() %&gt;% 
-  arrange(desc(n))
+  arrange(desc(n)) %&gt;% 
+  print()</code></pre>
+<pre><code>## # A tibble: 2,427 x 2
+## # Groups:   word [2,427]
+##    word           n
+##    &lt;chr&gt;      &lt;int&gt;
+##  1 social        27
+##  2 nacional      26
+##  3 desarrollo    25
+##  4 ley           24
+##  5 federal       21
+##  6 gobierno      18
+##  7 queremos      18
+##  8 deuda         17
+##  9 poder         17
+## 10 justicia      16
+## # … with 2,417 more rows</code></pre>
+<pre class="r"><code>nubealberto &lt;- wordcloud2::wordcloud2(frecuencia2)
 
-nubealberto &lt;- wordcloud2::wordcloud2(frecuencia2)</code></pre>
+print(nubealberto)</code></pre>
+<p><img src="index_files/nubealberto.png" width="100%" /></p>
 </div>
-<div id="gráficos" class="section level3">
-<h3>Gráficos</h3>
+<div id="creo-gráficos-de-barras-con-las-palabras-más-utilizadas-por-cada-uno." class="section level3">
+<h3>Creo gráficos de barras con las palabras más utilizadas por cada uno.</h3>
 <pre class="r"><code>frecuencia3 &lt;- alberto %&gt;% 
   group_by(word) %&gt;% 
   count() %&gt;%
@@ -163,7 +224,8 @@ barrasurquiza &lt;- ggplot(data = frecuencia4,
        x = &quot;&quot;)
 
 barrasurquiza + barraslaberto</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Aunque el análisis realizado es muy básico, las nubes de palabras ya reflejan bastante de la época y circunstancias en las que los discursos fueron escritos. Mientras que el de Urquiza habla de un país -en ese momento, una confederación- en etapa de formación, el de Alberto habla claramente de una crisis social y económica.</p>
 </div>
 
   

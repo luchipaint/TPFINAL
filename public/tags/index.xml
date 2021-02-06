@@ -17,27 +17,45 @@
     </item>
     
     <item>
-      <title>visualizar</title>
-      <link>https://example.com/tags/visualizar/</link>
-      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
+      <title>leer</title>
+      <link>https://example.com/tags/leer/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/visualizar/</guid>
+      <guid>https://example.com/tags/leer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ordenar</title>
       <link>https://example.com/tags/ordenar/</link>
-      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/tags/ordenar/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Transfomar</title>
+      <link>https://example.com/tags/transfomar/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/transfomar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visualizar</title>
+      <link>https://example.com/tags/visualizar/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/tags/visualizar/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>transformar</title>
       <link>https://example.com/tags/transformar/</link>
-      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/tags/transformar/</guid>
       <description></description>

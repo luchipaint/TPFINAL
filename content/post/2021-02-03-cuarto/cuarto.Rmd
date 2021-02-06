@@ -1,7 +1,7 @@
 ---
-title: Libertad humana y libertad económica
+title: 3. Libertad humana y libertad económica
 author: ~
-date: '2021-02-03'
+date: '2021-01-17'
 slug: cuarto
 categories: []
 tags: ['leer', 'ordenar', 'transformar', 'visualizar']
@@ -32,13 +32,13 @@ libertad2 <- libertad %>% #creo una nueva base
 ```{r, include=TRUE, warning=FALSE, message=FALSE}
 econyhumana <- ggplot(data = libertad2,
        mapping = aes(x = promediohumana, y = promedioecon, color = pais)) +
-  geom_point() +
+  geom_point() + #inicio gráfico
   labs(title = "Relación entre libertad humana y libertad económica",
        caption = "Fuente: Datos de miércoles",
        x = "Libertad humana",
        y = "Libertad económica") +
   ggthemes::theme_economist() +
-  theme(legend.position = "none")
+  theme(legend.position = "none") #ajusto gráfico
 
 print(econyhumana)
 

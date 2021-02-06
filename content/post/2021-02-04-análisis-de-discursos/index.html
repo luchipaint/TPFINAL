@@ -1,7 +1,7 @@
 ---
-title: Análisis de discursos
+title: 6. Análisis de discursos
 author: ~
-date: '2021-01-24'
+date: '2021-02-02'
 slug: análisis-de-discursos
 categories: []
 tags: ['Leer', 'Ordenar', 'Transfomar', 'Visualizar']
@@ -92,7 +92,10 @@ frecuencia2 &lt;- alberto %&gt;%
 <pre class="r"><code>nubealberto &lt;- wordcloud2::wordcloud2(frecuencia2)
 
 print(nubealberto)</code></pre>
-<p><img src="index_files/nubealberto.png" width="100%" /> ### Creo gráficos de barras con las palabras más utilizadas por cada uno.</p>
+<p><img src="index_files/nubealberto.png" width="100%" /></p>
+</div>
+<div id="creo-gráficos-de-barras-con-las-palabras-más-utilizadas-por-cada-uno." class="section level3">
+<h3>Creo gráficos de barras con las palabras más utilizadas por cada uno.</h3>
 <pre class="r"><code>frecuencia3 &lt;- alberto %&gt;% 
   group_by(word) %&gt;% 
   count() %&gt;%
@@ -129,4 +132,5 @@ barrasurquiza &lt;- ggplot(data = frecuencia4,
 
 barrasurquiza + barraslaberto</code></pre>
 <p><img src="index_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Aunque el análisis realizado es muy básico, las nubes de palabras ya reflejan bastante de la época y circunstancias en las que los discursos fueron escritos. Mientras que el de Urquiza habla de un país -en ese momento, una confederación- en etapa de formación, el de Alberto habla claramente de una crisis social y económica.</p>
 </div>

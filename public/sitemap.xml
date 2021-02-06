@@ -3,17 +3,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://example.com/2021-02-03-comunicar/</loc>
+    <lastmod>2021-02-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://example.com/</loc>
     <lastmod>2021-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/comunicar/</loc>
-    <lastmod>2021-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/2021-02-05-leaflet/</loc>
     <lastmod>2021-02-05T00:00:00+00:00</lastmod>
   </url>
   
@@ -28,47 +28,57 @@
   </url>
   
   <url>
-    <loc>https://example.com/tags/visualizar/</loc>
-    <lastmod>2021-02-05T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</loc>
-    <lastmod>2021-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/2021-02-03-comunicar/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/cuarto/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://example.com/2021-02-03-tercero/</loc>
-    <lastmod>2021-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</loc>
-    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://example.com/2021-02-03-calcular-diferencia-de-votos/</loc>
-    <lastmod>2021-01-10T00:00:00+00:00</lastmod>
+    <loc>https://example.com/tags/leer/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/ordenar/</loc>
-    <lastmod>2021-01-10T00:00:00+00:00</lastmod>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/transfomar/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/tags/visualizar/</loc>
+    <lastmod>2021-02-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2021-02-05-leaflet/</loc>
+    <lastmod>2021-01-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://example.com/tags/transformar/</loc>
+    <lastmod>2021-01-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/cuarto/</loc>
+    <lastmod>2021-01-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2021-02-06-ordenar-direcciones/</loc>
+    <lastmod>2021-01-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://example.com/2021-02-03-calcular-diferencia-de-votos/</loc>
     <lastmod>2021-01-10T00:00:00+00:00</lastmod>
   </url>
   

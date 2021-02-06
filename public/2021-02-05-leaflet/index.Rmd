@@ -1,7 +1,7 @@
 ---
-title: Geolocalizar discursos
+title: 5. Geolocalizar discursos
 author: ~
-date: '2021-02-05'
+date: '2021-01-30'
 slug: leaflet
 categories: []
 tags: ['comunicar', 'visualizar']
@@ -17,23 +17,24 @@ library(polAr)
 library(ggplot2)
 library(leaflet)
 ```
-###En la clase 8, que vi grabada porque ese día no tenía internet, el Tucu hizo un ejemplo de mapas interactivos con Yerba Buena, Tucumán. Mandé una foto de la pantalla a mi familia, porque vivimos en Yerba Buena hasta 1994.
 
-###Yo era muy chica para acordarme dónde vivía, pero mi hermano identificó la casa en la capturanque mandé. Y mi madre confirmó.
+En este ejercicio, me propuse geolocalizar los discursos pronunciados por Alberto Fernández durante el último mes. Para eso, armé una base de datos a partir de la información publicada en el sitio de Casa Rosada y los coordenadas de cada lugar (capturadas a a partir de Google Maps), y usé los mapas de la librería polAr y Leaflet para ubicar marcadores y labels a las direcciones.
 
-###Y con esos datos reproduje el gráfico del Tucu y marqué la casa con leaflet.
+Estoy segura de que este proceso podría hacerse de manera más eficiente a través de crear una función que tome las coordenadas de cada dirección directo desde la base para crear los marcadores, en lugar de pegarlos manualmente en el código, pero después de algunos intentos decidí postergarlo para cuando haya aprendido un poco más.
+
+También podrían sumarse a la base los textos de los discursos y hacer un análisis que combine de alguna manera los datos geográficos con el contenido, pero con topic modelling todavía no somos amigues (y lo intentamos, fueron horas y horas de trabajar en nuestra relación, pero todavía no llegamos a puerto).
 
 ```{r mapa}
 
-library(polAr)
-library(leaflet)
-library(googlesheets4)
+library(polAr) #para get_geo
+library(leaflet) #para agregar marcadores y labels con cada discurso
+library(googlesheets4) #para importar los datos de los discursos
 
 
-discursos_mapa <- read_sheet("https://docs.google.com/spreadsheets/d/1LjyV4saiEPvt9uT4N6_VEgUw1NAA11NzmQYAFfQ1Z28/edit?usp=sharing") %>% 
+discursos_mapa <- read_sheet("https://docs.google.com/spreadsheets/d/1LjyV4saiEPvt9uT4N6_VEgUw1NAA11NzmQYAFfQ1Z28/edit?usp=sharing") %>% # importo datos
   print()
 
-mapa_arg <- get_geo("Argentina")
+mapa_arg <- get_geo("Argentina") # obtengo geografía
 
 
 leaflet(mapa_arg) %>% 
@@ -41,7 +42,7 @@ leaflet(mapa_arg) %>%
   addProviderTiles(providers$Stamen.Toner) %>% 
   addMarkers(-58.4852501,-34.515, label = "Quinta de Olivos") %>% 
   addMarkers(-58.3858376, -34.5981075, label ="CEPAL") %>% 
-  addMarkers(-70.9107307, -33.4724712, label = "Santiago de Chile")
+  addMarkers(-70.9107307, -33.4724712, label = "Santiago de Chile") #agrego polígonos, coordenadas y labels
 
 
 ```

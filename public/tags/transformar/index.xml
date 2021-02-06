@@ -6,7 +6,27 @@
     <description>Recent content in transformar on ApRendiendo R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/transformar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 20 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/transformar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>4. Gráficos paralelos</title>
+      <link>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
+      <description>En este posteo, voy a extender la visualización exploratoria del anterior, y crear una gráfico de sets paralelos (o sankey) que muestre la cantidad de países que tienen un índice alto de felicidad (superior a 7) en cada región.
+1. Prendo librerías library(readr) library(tidyverse) library(dplyr)  2. Creo una variable categórica a partir de los datos sobre libertad humana libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) #importo datos ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
+    </item>
+    
+    <item>
+      <title>3. Libertad humana y libertad económica</title>
+      <link>https://example.com/cuarto/</link>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cuarto/</guid>
+      <description>En este ejercicio, voy a explorar gráficamente algunos indicadores sobre distintas medidas para la libertad en distintos países. En concreto, voy a observar que existe una relación clara entre los índices de libertad humana y los de libertad económica.
+Importo datos library(readr) #prendo librería para leer datos library(tidyverse) #prendo librería para ordenar y transformar datos libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) #importo datos print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
+    </item>
+    
     <item>
       <title>Calcular diferencia de votos</title>
       <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>

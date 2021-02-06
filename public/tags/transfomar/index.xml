@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Transfomar on ApRendiendo R</title>
+    <link>https://example.com/tags/transfomar/</link>
+    <description>Recent content in Transfomar on ApRendiendo R</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 02 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/transfomar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>6. Análisis de discursos</title>
+      <link>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</link>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</guid>
+      <description>En este posteo, voy a intentar un análisis muy simple de las palabras más utilizadas en dos discursos de apertura de la asamblea legislativa muy particulares:
+ el más antiguo, pronunciado por Justo José de Urquiza en 1854 (en ese entonces, ante el llamado &amp;quot;Congreso Legislativo Federal&amp;quot;) el más reciente, pronunciado por Alberto Fernández en 2020  Para hacerlo, me voy a valer de los datos de la librería polAr, que ya cuenta con los discursos tokenizados.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -8,59 +8,62 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Geolocalizar discursos</title>
-      <link>https://example.com/2021-02-05-leaflet/</link>
-      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/2021-02-05-leaflet/</guid>
-      <description>En la clase 8, que vi grabada porque ese día no tenía internet, el Tucu hizo un ejemplo de mapas interactivos con Yerba Buena, Tucumán. Mandé una foto de la pantalla a mi familia, porque vivimos en Yerba Buena hasta 1994.  Yo era muy chica para acordarme dónde vivía, pero mi hermano identificó la casa en la capturanque mandé. Y mi madre confirmó.</description>
-    </item>
-    
-    <item>
-      <title>Gráficos paralelos</title>
-      <link>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</link>
-      <pubDate>Thu, 04 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
-      <description>library(readr) library(tidyverse) library(dplyr) libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.57 48 ## 2 2016 DZA Alge… Orien… 5.14 155 ## 3 2016 AGO Ango… Áfric… 5.64 142 ## 4 2016 ARG Arge… Latin… 6.47 107 ## 5 2016 ARM Arme… Cáuca… 7.24 57 ## 6 2016 AUS Aust… Ocean… 8.</description>
-    </item>
-    
-    <item>
-      <title>Armar un (pequeño y simple) sitio web</title>
+      <title>7. Armar un (pequeño y simple) sitio web</title>
       <link>https://example.com/2021-02-03-comunicar/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/2021-02-03-comunicar/</guid>
       <description>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados acá, pero voy a dejar a continuación algunos detalles más específicos de la configuración.
 Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &amp;quot;about&amp;quot; por &amp;quot;acerca de&amp;quot;. Para eso, modifiqué parámetros en el archivo config.toml:
- Cambiar los colores El theme elegido (de toda esta lista (link) fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración.</description>
+ Cambiar los colores El theme elegido de toda esta lista fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración.</description>
     </item>
     
     <item>
-      <title>Libertad humana y libertad económica</title>
-      <link>https://example.com/cuarto/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/cuarto/</guid>
-      <description>library(readr) library(tidyverse) libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.57 48 ## 2 2016 DZA Alge… Orien… 5.14 155 ## 3 2016 AGO Ango… Áfric… 5.64 142 ## 4 2016 ARG Arge… Latin… 6.47 107 ## 5 2016 ARM Arme… Cáuca… 7.24 57 ## 6 2016 AUS Aust… Ocean… 8.</description>
-    </item>
-    
-    <item>
-      <title>tercero</title>
-      <link>https://example.com/2021-02-03-tercero/</link>
-      <pubDate>Wed, 03 Feb 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://example.com/2021-02-03-tercero/</guid>
-      <description> library(googlesheets4) gs4_deauth() muestra2 &amp;lt;- read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing&amp;quot;) </description>
-    </item>
-    
-    <item>
-      <title>Análisis de discursos</title>
+      <title>6. Análisis de discursos</title>
       <link>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</link>
-      <pubDate>Sun, 24 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</guid>
-      <description> library(polAr) library(dplyr) library(tm) library(topicmodels) library(tidyverse) library(ggplot2) library(forcats) library(patchwork) library(wordcloud2) show_available_speech() ## # A tibble: 116 x 2 ## year president ## &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; ## 1 1854 justo_jose_de_urquiza ## 2 1855 justo_jose_de_urquiza ## 3 1856 justo_jose_de_urquiza ## 4 1857 justo_jose_de_urquiza ## 5 1858 justo_jose_de_urquiza ## 6 1859 justo_jose_de_urquiza ## 7 1860 santiago_derqui ## 8 1861 santiago_derqui ## 9 1862 bartolome_mitre ## 10 1863 bartolome_mitre ## # … with 106 more rows urquiza &amp;lt;- get_speech(year = 1854) frecuencia &amp;lt;- urquiza %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) nubeurquiza &amp;lt;- wordcloud2::wordcloud2(frecuencia) print(nubeurquiza) Alberto alberto &amp;lt;- get_speech(year = 2020) frecuencia2 &amp;lt;- alberto %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) nubealberto &amp;lt;- wordcloud2::wordcloud2(frecuencia2)  Gráficos frecuencia3 &amp;lt;- alberto %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) %&amp;gt;% ungroup() %&amp;gt;% slice(1:5) frecuencia4 &amp;lt;- urquiza %&amp;gt;% group_by(word) %&amp;gt;% count() %&amp;gt;% arrange(desc(n)) %&amp;gt;% ungroup() %&amp;gt;% slice(1:5) barraslaberto &amp;lt;- ggplot(data = frecuencia3, mapping = aes(x = word, y = n)) + geom_col() + ggthemes::theme_economist() + labs(title = &amp;quot;Palabras más usadas por Alberto Fernandez&amp;quot;, subtitle = &amp;quot;Inicio de Asamblea Legislativa 2020&amp;quot;, caption = &amp;quot;Fuente: Datos de polAr&amp;quot;, y = &amp;quot;&amp;quot;, x = &amp;quot;&amp;quot;) barrasurquiza &amp;lt;- ggplot(data = frecuencia4, mapping = aes(x = word, y = n)) + geom_col() + ggthemes::theme_economist() + labs(title = &amp;quot;Palabras más usadas por Urquiza&amp;quot;, subtitle = &amp;quot;Inicio de Asamblea Legislativa 1854&amp;quot;, caption = &amp;quot;Fuente: Datos de polAr&amp;quot;, y = &amp;quot;&amp;quot;, x = &amp;quot;&amp;quot;) barrasurquiza + barraslaberto  </description>
+      <description>En este posteo, voy a intentar un análisis muy simple de las palabras más utilizadas en dos discursos de apertura de la asamblea legislativa muy particulares:
+ el más antiguo, pronunciado por Justo José de Urquiza en 1854 (en ese entonces, ante el llamado &amp;quot;Congreso Legislativo Federal&amp;quot;) el más reciente, pronunciado por Alberto Fernández en 2020  Para hacerlo, me voy a valer de los datos de la librería polAr, que ya cuenta con los discursos tokenizados.</description>
+    </item>
+    
+    <item>
+      <title>5. Geolocalizar discursos</title>
+      <link>https://example.com/2021-02-05-leaflet/</link>
+      <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-05-leaflet/</guid>
+      <description>En este ejercicio, me propuse geolocalizar los discursos pronunciados por Alberto Fernández durante el último mes. Para eso, armé una base de datos a partir de la información publicada en el sitio de Casa Rosada y los coordenadas de cada lugar (capturadas a a partir de Google Maps), y usé los mapas de la librería polAr y Leaflet para ubicar marcadores y labels a las direcciones.</description>
+    </item>
+    
+    <item>
+      <title>4. Gráficos paralelos</title>
+      <link>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</link>
+      <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
+      <description>En este posteo, voy a extender la visualización exploratoria del anterior, y crear una gráfico de sets paralelos (o sankey) que muestre la cantidad de países que tienen un índice alto de felicidad (superior a 7) en cada región.
+1. Prendo librerías library(readr) library(tidyverse) library(dplyr)  2. Creo una variable categórica a partir de los datos sobre libertad humana libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) #importo datos ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
+    </item>
+    
+    <item>
+      <title>3. Libertad humana y libertad económica</title>
+      <link>https://example.com/cuarto/</link>
+      <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/cuarto/</guid>
+      <description>En este ejercicio, voy a explorar gráficamente algunos indicadores sobre distintas medidas para la libertad en distintos países. En concreto, voy a observar que existe una relación clara entre los índices de libertad humana y los de libertad económica.
+Importo datos library(readr) #prendo librería para leer datos library(tidyverse) #prendo librería para ordenar y transformar datos libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) #importo datos print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
+    </item>
+    
+    <item>
+      <title>2. Ordenar direcciones</title>
+      <link>https://example.com/2021-02-06-ordenar-direcciones/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://example.com/2021-02-06-ordenar-direcciones/</guid>
+      <description>1. Prendo librerías library(googlesheets4) #para importar datos gs4_deauth() #para que google sheets no sea interactiva library(tidyverse) #para transformar y ordenar los datos  2. Importo datos muestra2 &amp;lt;- read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing&amp;quot;) %&amp;gt;% print() #importo datos ## # A tibble: 40 x 1 ## dire ## &amp;lt;chr&amp;gt; ## 1 Zuviría 1470, San Miguel , Buenos Aires ## 2 Moreno 359, San Carlos de Bariloche, Río Negro ## 3 III 271, Villa La Arcadia, Buenos Aires ## 4 González Chávez 485, Balcarce, Buenos Aires ## 5 Jacaranda 55, Cariló, Buenos Aires ## 6 Leopoldo Lugones 1945, Ushuaia, Tierra del Fuego, Antártida e Islas del Atlá… ## 7 Tucumán 2728, Mar del Plata, Buenos Aires ## 8 Lisandro De La Torre 411, La Falda, Córdoba ## 9 Los Alamos Sin datos, Orense, Buenos Aires ## 10 Sierra Paileman 335, Las Grutas, Río Negro ## # … with 30 more rows  3.</description>
     </item>
     
     <item>

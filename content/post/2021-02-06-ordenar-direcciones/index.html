@@ -1,0 +1,82 @@
+---
+title: 2. Ordenar direcciones
+author: ~
+date: '2021-01-10'
+slug: ordenar-direcciones
+categories: []
+tags: []
+---
+
+
+
+<div id="prendo-librerías" class="section level3">
+<h3>1. Prendo librerías</h3>
+<pre class="r"><code>library(googlesheets4) #para importar datos
+gs4_deauth() #para que google sheets no sea interactiva
+library(tidyverse) #para transformar y ordenar los datos</code></pre>
+</div>
+<div id="importo-datos" class="section level3">
+<h3>2. Importo datos</h3>
+<pre class="r"><code>muestra2 &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing&quot;) %&gt;% 
+  print() #importo datos</code></pre>
+<pre><code>## # A tibble: 40 x 1
+##    dire                                                                         
+##    &lt;chr&gt;                                                                        
+##  1 Zuviría 1470, San Miguel , Buenos Aires                                      
+##  2 Moreno 359, San Carlos de Bariloche, Río Negro                               
+##  3 III 271, Villa La Arcadia, Buenos Aires                                      
+##  4 González Chávez 485, Balcarce, Buenos Aires                                  
+##  5 Jacaranda 55, Cariló, Buenos Aires                                           
+##  6 Leopoldo Lugones 1945, Ushuaia, Tierra del Fuego, Antártida e Islas del Atlá…
+##  7 Tucumán 2728, Mar del Plata, Buenos Aires                                    
+##  8 Lisandro De La Torre 411, La Falda, Córdoba                                  
+##  9 Los Alamos Sin datos, Orense, Buenos Aires                                   
+## 10 Sierra Paileman 335, Las Grutas, Río Negro                                   
+## # … with 30 more rows</code></pre>
+</div>
+<div id="separo-columnas" class="section level3">
+<h3>3. Separo columnas</h3>
+<pre class="r"><code>muestraseparada &lt;- muestra2 %&gt;% 
+  as_tibble() %&gt;% 
+  separate(col = dire,
+           into = c(&quot;calle&quot;, &quot;depto&quot;, &quot;prov&quot;),
+           sep = &quot;,&quot;) %&gt;% 
+  print() #creo una base nueva, con los columnas ya separadas</code></pre>
+<pre><code>## # A tibble: 40 x 3
+##    calle                    depto                      prov               
+##    &lt;chr&gt;                    &lt;chr&gt;                      &lt;chr&gt;              
+##  1 Zuviría 1470             &quot; San Miguel &quot;             &quot; Buenos Aires&quot;    
+##  2 Moreno 359               &quot; San Carlos de Bariloche&quot; &quot; Río Negro&quot;       
+##  3 III 271                  &quot; Villa La Arcadia&quot;        &quot; Buenos Aires&quot;    
+##  4 González Chávez 485      &quot; Balcarce&quot;                &quot; Buenos Aires&quot;    
+##  5 Jacaranda 55             &quot; Cariló&quot;                  &quot; Buenos Aires&quot;    
+##  6 Leopoldo Lugones 1945    &quot; Ushuaia&quot;                 &quot; Tierra del Fuego&quot;
+##  7 Tucumán 2728             &quot; Mar del Plata&quot;           &quot; Buenos Aires&quot;    
+##  8 Lisandro De La Torre 411 &quot; La Falda&quot;                &quot; Córdoba&quot;         
+##  9 Los Alamos Sin datos     &quot; Orense&quot;                  &quot; Buenos Aires&quot;    
+## 10 Sierra Paileman 335      &quot; Las Grutas&quot;              &quot; Río Negro&quot;       
+## # … with 30 more rows</code></pre>
+</div>
+<div id="limpio-direcciones" class="section level3">
+<h3>4. Limpio direcciones</h3>
+<pre class="r"><code>muestralimpia &lt;- muestraseparada %&gt;% 
+  mutate(across(.cols = c(depto,prov),
+                .fns = str_trim), #emprolijo a través de sacar los espacios
+         numero = str_remove_all(calle, pattern = &quot;\\D+&quot;),
+         calle = str_remove_all(calle, pattern = &quot;\\d+&quot;)) %&gt;% 
+  print() #elimino números de &quot;calle&quot; y creo una nueva variable con los números</code></pre>
+<pre><code>## # A tibble: 40 x 4
+##    calle                   depto                   prov             numero
+##    &lt;chr&gt;                   &lt;chr&gt;                   &lt;chr&gt;            &lt;chr&gt; 
+##  1 &quot;Zuviría &quot;              San Miguel              Buenos Aires     &quot;1470&quot;
+##  2 &quot;Moreno &quot;               San Carlos de Bariloche Río Negro        &quot;359&quot; 
+##  3 &quot;III &quot;                  Villa La Arcadia        Buenos Aires     &quot;271&quot; 
+##  4 &quot;González Chávez &quot;      Balcarce                Buenos Aires     &quot;485&quot; 
+##  5 &quot;Jacaranda &quot;            Cariló                  Buenos Aires     &quot;55&quot;  
+##  6 &quot;Leopoldo Lugones &quot;     Ushuaia                 Tierra del Fuego &quot;1945&quot;
+##  7 &quot;Tucumán &quot;              Mar del Plata           Buenos Aires     &quot;2728&quot;
+##  8 &quot;Lisandro De La Torre &quot; La Falda                Córdoba          &quot;411&quot; 
+##  9 &quot;Los Alamos Sin datos&quot;  Orense                  Buenos Aires     &quot;&quot;    
+## 10 &quot;Sierra Paileman &quot;      Las Grutas              Río Negro        &quot;335&quot; 
+## # … with 30 more rows</code></pre>
+</div>

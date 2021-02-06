@@ -1,12 +1,97 @@
----
-title: Geolocalizar discursos
-author: ~
-date: '2021-02-05'
-slug: leaflet
-categories: []
-tags: ['comunicar', 'visualizar']
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Hugo 0.78.2" />
+  <link rel="stylesheet" href="https://example.com/css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  
+  
+  
+  <link rel="stylesheet" href="https://example.com/css/cayman.9a4e4a4ee0cbcd2775aab3cd6e932c7d2624de791bb6f999159fa4b245deccbf.css">
+  
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css" integrity="sha384-yFRtMMDnQtDRO8rLpMIKrtPCD5jdktao2TV19YiZYWMDkUR5GQZR/NOVTdquEx1j" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.js" integrity="sha384-9Nhn55MVVN0/4OFx7EE5kpFBPsEMZxKTCnA+4fqDmg12eCTqGi6+BB2LjY8brQxJ" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
 
+  <title>5. Geolocalizar discursos | ApRendiendo R</title>
+</head>
+
+<body>
+  <section class="page-header">
+  <h1 class="project-name">
+    ApRendiendo R
+  </h1>
+  <h2 class="project-tagline">
+    Leer / ordenar / transformar / visualizar / comunicar
+  </h2>
+  <nav>
+    
+    
+      
+      
+      
+      
+      <a href="/" class="btn">Blog</a>
+    
+      
+      
+      
+      
+      <a href="/tags/" class="btn">Tags</a>
+    
+      
+      
+      
+      
+      <a href="/about/" class="btn">Acerca de</a>
+    
+      
+      
+      
+      
+      <a href="https://github.com/luchipaint/" class="btn">Github</a>
+    
+      
+      
+      
+      
+      <a href="https://twitter.com/luchipaint" class="btn">Twitter</a>
+    
+  </nav>
+</section>
+
+  <section class="main-content">
+    
+  <h1>5. Geolocalizar discursos</h1>
+  <div>
+    
+    <strong>Publish date: </strong>30-01-2021
+  </div>
+  
+  
+    <div>
+      <strong>Tags: </strong>
+      
+        
+        
+        
+      
+        
+        
+        
+      
+      <a href="https://example.com/tags/comunicar/">comunicar</a>, <a href="https://example.com/tags/visualizar/">visualizar</a>
+    </div>
+  
+  
 <script src="index_files/htmlwidgets/htmlwidgets.js"></script>
 <script src="index_files/jquery/jquery.min.js"></script>
 <link href="index_files/leaflet/leaflet.css" rel="stylesheet" />
@@ -20,26 +105,21 @@ tags: ['comunicar', 'visualizar']
 <script src="index_files/leaflet-providers-plugin/leaflet-providers-plugin.js"></script>
 
 
-<div id="en-la-clase-8-que-vi-grabada-porque-ese-día-no-tenía-internet-el-tucu-hizo-un-ejemplo-de-mapas-interactivos-con-yerba-buena-tucumán.-mandé-una-foto-de-la-pantalla-a-mi-familia-porque-vivimos-en-yerba-buena-hasta-1994." class="section level3">
-<h3>En la clase 8, que vi grabada porque ese día no tenía internet, el Tucu hizo un ejemplo de mapas interactivos con Yerba Buena, Tucumán. Mandé una foto de la pantalla a mi familia, porque vivimos en Yerba Buena hasta 1994.</h3>
-</div>
-<div id="yo-era-muy-chica-para-acordarme-dónde-vivía-pero-mi-hermano-identificó-la-casa-en-la-capturanque-mandé.-y-mi-madre-confirmó." class="section level3">
-<h3>Yo era muy chica para acordarme dónde vivía, pero mi hermano identificó la casa en la capturanque mandé. Y mi madre confirmó.</h3>
-</div>
-<div id="y-con-esos-datos-reproduje-el-gráfico-del-tucu-y-marqué-la-casa-con-leaflet." class="section level3">
-<h3>Y con esos datos reproduje el gráfico del Tucu y marqué la casa con leaflet.</h3>
-<pre class="r"><code>library(polAr)
-library(leaflet)
-library(googlesheets4)
+<p>En este ejercicio, me propuse geolocalizar los discursos pronunciados por Alberto Fernández durante el último mes. Para eso, armé una base de datos a partir de la información publicada en el sitio de Casa Rosada y los coordenadas de cada lugar (capturadas a a partir de Google Maps), y usé los mapas de la librería polAr y Leaflet para ubicar marcadores y labels a las direcciones.</p>
+<p>Estoy segura de que este proceso podría hacerse de manera más eficiente a través de crear una función que tome las coordenadas de cada dirección directo desde la base para crear los marcadores, en lugar de pegarlos manualmente en el código, pero después de algunos intentos decidí postergarlo para cuando haya aprendido un poco más.</p>
+<p>También podrían sumarse a la base los textos de los discursos y hacer un análisis que combine de alguna manera los datos geográficos con el contenido, pero con topic modelling todavía no somos amigues (y lo intentamos, fueron horas y horas de trabajar en nuestra relación, pero todavía no llegamos a puerto).</p>
+<pre class="r"><code>library(polAr) #para get_geo
+library(leaflet) #para agregar marcadores y labels con cada discurso
+library(googlesheets4) #para importar los datos de los discursos
 
 
-discursos_mapa &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1LjyV4saiEPvt9uT4N6_VEgUw1NAA11NzmQYAFfQ1Z28/edit?usp=sharing&quot;) %&gt;% 
+discursos_mapa &lt;- read_sheet(&quot;https://docs.google.com/spreadsheets/d/1LjyV4saiEPvt9uT4N6_VEgUw1NAA11NzmQYAFfQ1Z28/edit?usp=sharing&quot;) %&gt;% # importo datos
   print()</code></pre>
 <pre><code>## # A tibble: 1 x 5
 ##   discurso                       fecha               lugar         coord1 coord2
 ##   &lt;chr&gt;                          &lt;dttm&gt;              &lt;chr&gt;          &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 Palabras del Presidente de la… 2021-01-28 00:00:00 Residencia P…  -70.9  -33.5</code></pre>
-<pre class="r"><code>mapa_arg &lt;- get_geo(&quot;Argentina&quot;)
+<pre class="r"><code>mapa_arg &lt;- get_geo(&quot;Argentina&quot;) # obtengo geografía
 
 
 leaflet(mapa_arg) %&gt;% 
@@ -47,7 +127,32 @@ leaflet(mapa_arg) %&gt;%
   addProviderTiles(providers$Stamen.Toner) %&gt;% 
   addMarkers(-58.4852501,-34.515, label = &quot;Quinta de Olivos&quot;) %&gt;% 
   addMarkers(-58.3858376, -34.5981075, label =&quot;CEPAL&quot;) %&gt;% 
-  addMarkers(-70.9107307, -33.4724712, label = &quot;Santiago de Chile&quot;)</code></pre>
+  addMarkers(-70.9107307, -33.4724712, label = &quot;Santiago de Chile&quot;) #agrego polígonos, coordenadas y labels</code></pre>
 <div id="htmlwidget-1" style="width:672px;height:480px;" class="leaflet html-widget"></div>
 <script type="application/json" data-for="htmlwidget-1">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addPolygons","args":[[],null,null,{"interactive":true,"className":"","stroke":true,"color":"#03F","weight":5,"opacity":0.5,"fill":true,"fillColor":"#03F","fillOpacity":0.2,"smoothFactor":1,"noClip":false},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addProviderTiles","args":["Stamen.Toner",null,null,{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addMarkers","args":[-34.515,-58.4852501,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Quinta de Olivos",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[-34.5981075,-58.3858376,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"CEPAL",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addMarkers","args":[-33.4724712,-70.9107307,null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,"Santiago de Chile",{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]}],"limits":{"lat":[-34.5981075,-33.4724712],"lng":[-70.9107307,-58.3858376]}},"evals":[],"jsHooks":[]}</script>
-</div>
+
+  
+
+  
+
+
+
+    <footer class="site-footer">
+  <span class="site-footer-credits">
+    Hecho con <a href="https://gohugo.io/">Hugo</a>. Theme por <a href="https://github.com/zwbetz-gh/cayman-hugo-theme">Cayman</a>. Deployado en <a href="https://www.netlify.com/">Netlify</a>.
+  </span>
+</footer>
+
+  </section>
+  
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+</body>
+</html>

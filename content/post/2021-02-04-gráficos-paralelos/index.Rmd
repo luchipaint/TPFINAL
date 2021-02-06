@@ -1,7 +1,7 @@
 ---
-title: Gráficos paralelos
+title: 4. Gráficos paralelos
 author: ~
-date: '2021-02-04'
+date: '2021-01-20'
 slug: gráficos-paralelos
 categories: []
 tags: ['visualizar', 'transformar']

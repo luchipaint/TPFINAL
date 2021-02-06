@@ -1,7 +1,7 @@
 ---
-title: Calcular diferencia de votos
-author: luchipaint
-date: '2021-01-10'
+title: 1. Calcular diferencia de votos
+author:
+date: '2021-01-03'
 slug: calcular-diferencia-de-votos
 categories: []
 tags: ['ordenar','transformar', 'visualizar']
@@ -53,7 +53,7 @@ caba2003_corta <- caba2003 %>% #nueva base, más corta
 
 Para terminar, armé un gráfico de barras muy simple con los resultados, expresados en porcentajes.
 
-```{r, include=TRUE, warning=FALSE, message=FALSE}
+```{r, include=TRUE, warning=FALSE, message=FALSE, fig.width=80%}
 
 ggplot(data = caba2003_corta,
        mapping = aes(x = nombre_lista, y = porcentaje))+

@@ -1,10 +1,10 @@
 ---
 title: 1. Calcular diferencia de votos
-author:
+author: ~
 date: '2021-01-03'
-slug: calcular-diferencia-de-votos
+slug: leaflet
 categories: []
-tags: ['ordenar','transformar', 'visualizar']
+tags: ['ordenar', 'transformar', 'visualizar']
 ---
 
 Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos. 
@@ -53,7 +53,7 @@ caba2003_corta <- caba2003 %>% #nueva base, más corta
 
 Para terminar, armé un gráfico de barras muy simple con los resultados, expresados en porcentajes.
 
-```{r, include=TRUE, warning=FALSE, message=FALSE, fig.width=80%}
+```{r, include=TRUE, warning=FALSE, message=FALSE}
 
 ggplot(data = caba2003_corta,
        mapping = aes(x = nombre_lista, y = porcentaje))+

@@ -47,9 +47,9 @@ Importo datos library(readr) #prendo librería para leer datos library(tidyverse
     </item>
     
     <item>
-      <title>Calcular diferencia de votos</title>
+      <title>1. Calcular diferencia de votos</title>
       <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>
-      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
       <guid>https://example.com/2021-02-03-calcular-diferencia-de-votos/</guid>
       <description>Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos.

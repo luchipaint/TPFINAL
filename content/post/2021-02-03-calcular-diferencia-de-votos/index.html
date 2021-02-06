@@ -3,16 +3,24 @@ title: Calcular diferencia de votos
 author: luchipaint
 slug: calcular-diferencia-de-votos
 categories: []
-tags: ['Transformar']
+tags: ['ordenar','transformar', 'visualizar']
 ---
 
 
 
-<pre class="r"><code>library(tidyverse)
-library(polAr)
-
-elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot;gral&quot;, 2003) %&gt;%
-  get_names() %&gt;% 
+<p>Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos.</p>
+<p>El primer paso fue prender las librerías:</p>
+<pre class="r"><code>library(tidyverse) #para los verbos de dyplir y usar ggplot, entre otras cosas
+library(polAr) #para obtener los datos de las elecciones</code></pre>
+<p>Después cree una nueva base de datos (elecciones2003) a partir de los datos de las elecciones presidenciales de 2003, y una nueva (caba2003) en la que:</p>
+<ul>
+<li>apliqué un filtro para trabajar con los resultados de la Ciudad de Buenos Aires</li>
+<li>elegí las variables con las que me interesaba trabajar</li>
+<li>calculé los porcentajes de votos obtenidos por cada lista</li>
+<li>los ordené en orden descendente</li>
+</ul>
+<pre class="r"><code>elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot;gral&quot;, 2003) %&gt;% #obtengo datos desde polAR y creo base nuevo
+  get_names() %&gt;% # obtengo los nombres de las listas
   print()</code></pre>
 <pre><code>## # A tibble: 480 x 9
 ## # Groups:   codprov [24]
@@ -29,12 +37,12 @@ elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot
 ##  9 presi    gral   2003 01      CABA        2590435 0051    4264 Partido Popula…
 ## 10 presi    gral   2003 01      CABA        2590435 0053   15948 Conf. Para que…
 ## # … with 470 more rows</code></pre>
-<pre class="r"><code>caba2003 &lt;- elecciones2003 %&gt;% 
-  filter(name_prov == &quot;CABA&quot;) %&gt;% 
-  select(codprov, name_prov, electores, listas, votos, nombre_lista) %&gt;% 
-  group_by(nombre_lista) %&gt;% 
-  summarise(votoscaba = sum(votos)) %&gt;% 
-  arrange(desc(votoscaba)) %&gt;% 
+<pre class="r"><code>caba2003 &lt;- elecciones2003 %&gt;% #creo una nueva base para CABA
+  filter(name_prov == &quot;CABA&quot;) %&gt;% #filtro
+  select(codprov, name_prov, electores, listas, votos, nombre_lista) %&gt;% #elijo variables
+  group_by(nombre_lista) %&gt;% #agrupo por listas
+  summarise(votoscaba = sum(votos)) %&gt;% #calculo porcentaje
+  arrange(desc(votoscaba)) %&gt;% #ordeno
   print()</code></pre>
 <pre><code>## # A tibble: 20 x 2
 ##    nombre_lista                            votoscaba
@@ -69,3 +77,4 @@ elecciones2003 &lt;- get_election_data(&quot;arg&quot;, &quot;presi&quot;, &quot
 ##        &lt;dbl&gt;
 ## 1      NA   
 ## 2      -5.87</code></pre>
+<p>```</p>

@@ -3,28 +3,51 @@ title: Calcular diferencia de votos
 author: luchipaint
 slug: calcular-diferencia-de-votos
 categories: []
-tags: ['Transformar']
+tags: ['ordenar','transformar', 'visualizar']
 ---
+
+Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos. 
+
+El primer paso fue prender las librerías:
+
 ```{r, include=TRUE, warning=FALSE, message=FALSE}
 
-library(tidyverse)
-library(polAr)
+library(tidyverse) #para los verbos de dyplir y usar ggplot, entre otras cosas
+library(polAr) #para obtener los datos de las elecciones
 
-elecciones2003 <- get_election_data("arg", "presi", "gral", 2003) %>%
-  get_names() %>% 
+```
+
+Después cree una nueva base de datos (elecciones2003) a partir de los datos de las elecciones presidenciales de 2003, y una nueva (caba2003) en la que:
+
++ apliqué un filtro para trabajar con los resultados de la Ciudad de Buenos Aires
++ elegí las variables con las que me interesaba trabajar
++ calculé los porcentajes de votos obtenidos por cada lista
++ los ordené en orden descendente
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
+
+elecciones2003 <- get_election_data("arg", "presi", "gral", 2003) %>% #obtengo datos desde polAR y creo base nuevo
+  get_names() %>% # obtengo los nombres de las listas
   print()
 
-caba2003 <- elecciones2003 %>% 
-  filter(name_prov == "CABA") %>% 
-  select(codprov, name_prov, electores, listas, votos, nombre_lista) %>% 
-  group_by(nombre_lista) %>% 
-  summarise(votoscaba = sum(votos)) %>% 
-  arrange(desc(votoscaba)) %>% 
+caba2003 <- elecciones2003 %>% #creo una nueva base para CABA
+  filter(name_prov == "CABA") %>% #filtro
+  select(codprov, name_prov, electores, listas, votos, nombre_lista) %>% #elijo variables
+  group_by(nombre_lista) %>% #agrupo por listas
+  summarise(votoscaba = sum(votos)) %>% #calculo porcentaje
+  arrange(desc(votoscaba)) %>% #ordeno
   print()
 
+```
+
+```{r, include=TRUE, warning=FALSE, message=FALSE}
 caba2003 %>% 
   mutate(porcentaje = votoscaba/sum(votoscaba)*100) %>% 
   slice(1:2) %>% 
   summarise(diferencia = porcentaje - lag(porcentaje)) %>% 
   print()
+
+```
+
+
 ```

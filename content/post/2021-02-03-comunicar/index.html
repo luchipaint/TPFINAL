@@ -1,7 +1,7 @@
 ---
 title: Armar un (pequeño y simple) sitio web
 author: luchipaint
-#date: '2021-02-03'
+date: '2021-02-03'
 slug: comunicar
 categories: []
 tags: ['comunicar']
@@ -9,18 +9,24 @@ tags: ['comunicar']
 
 
 
-<div id="cómo-fue-armado-este-blog" class="section level2">
-<h2>Cómo fue armado este blog</h2>
+<p>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados <a href="%22https://bookdown.org/yihui/blogdown/%22">acá</a>, pero voy a dejar a continuación algunos detalles más específicos de la configuración.</p>
+<div id="argentinizarlo" class="section level3">
+<h3>Argentinizarlo</h3>
+<p>Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &quot;about&quot; por &quot;acerca de&quot;. Para eso, modifiqué parámetros en el archivo config.toml:</p>
+<p><img src="index_files/colores.png" width="100%" /></p>
 </div>
-<div id="este-blog-fue-creado-gracias-a-hugo-pandoc-y-blogdown.-los-pasos-seguidos-están-bien-descriptos-acá" class="section level1">
-<h1>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están bien descriptos <a href="link:">acá</a></h1>
-<div id="cambiar-los-colores" class="section level2">
-<h2>Cambiar los colores</h2>
-<pre class="r"><code>
-library(RColorBrewer)
-display.brewer.all()</code></pre>
-<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>brewer.pal(n = 4, name = &quot;Set3&quot;)
+<div id="cambiar-los-colores" class="section level3">
+<h3>Cambiar los colores</h3>
+<p>El theme elegido (de toda esta lista (link) fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración. Uno de ellos fue cambiar los colores, que eran así:</p>
+<p><img src="index_files/cayman.png" width="100%" /></p>
+<p>Para tener a mano los códigos HEX, y ya organizados en paletas de colores, hice lo siguiente:</p>
+<pre class="r"><code>library(RColorBrewer) #prendo librería
+display.brewer.all() #le pido que me muestre los códigos HEX</code></pre>
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>brewer.pal(n = 4, name = &quot;Set3&quot;) #le pido que me de los códigos de los primeros cuatro colores de la paleta Set 3
 ## [1] &quot;#8DD3C7&quot; &quot;#FFFFB3&quot; &quot;#BEBADA&quot; &quot;#FB8072&quot;</code></pre>
-</div>
+<p>En el proceso se vivieron momentos estéticamente complicados, como este:</p>
+<p><img src="index_files/complicado.png" width="100%" /></p>
+<p>Pero llegamos a un resultado un poco más sobrio. Los códigos usados son estos:</p>
+<p><img src="index_files/colores.png" width="100%" /></p>
 </div>

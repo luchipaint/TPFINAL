@@ -1,28 +1,48 @@
 ---
 title: Armar un (pequeño y simple) sitio web
 author: luchipaint
-#date: '2021-02-03'
+date: '2021-02-03'
 slug: comunicar
 categories: []
 tags: ['comunicar']
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(collapse = TRUE)
+Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy  bien explicados [acá]("https://bookdown.org/yihui/blogdown/"), pero voy a dejar a continuación algunos detalles más específicos de la configuración.
+
+### Argentinizarlo
+
+Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como "about" por "acerca de". Para eso, modifiqué parámetros en el archivo config.toml:
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("index_files/colores.png")
 ```
 
-## Cómo fue armado este blog
+### Cambiar los colores
 
-# Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están bien descriptos [acá](link:)
+El theme elegido (de toda esta lista (link) fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración. Uno de ellos fue cambiar los colores, que eran así:
 
-## Cambiar los colores
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("index_files/cayman.png")
+```
 
-```{r, include=TRUE}
+Para tener a mano los códigos HEX, y ya organizados en paletas de colores, hice lo siguiente:
 
-library(RColorBrewer)
-display.brewer.all()
-brewer.pal(n = 4, name = "Set3")
+```{r, include=TRUE, collapse=TRUE}
+library(RColorBrewer) #prendo librería
+display.brewer.all() #le pido que me muestre los códigos HEX
+brewer.pal(n = 4, name = "Set3") #le pido que me de los códigos de los primeros cuatro colores de la paleta Set 3
+```
 
+En el proceso se vivieron momentos estéticamente complicados, como este:
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("index_files/complicado.png")
+```
+
+Pero llegamos a un resultado un poco más sobrio. Los códigos usados son estos: 
+
+```{r, echo=FALSE, out.width="100%"}
+knitr::include_graphics("index_files/colores.png")
 ```
 
 

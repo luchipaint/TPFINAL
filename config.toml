@@ -37,7 +37,7 @@ pygmentsStyle = "pygments"
 
   # Breakpoints
   large_breakpoint = "64em"
-  medium_breakpoint = "42em"
+  medium_breakpoint = "54em"
 
   # Header colors
   header_heading_color = "#fff"
@@ -75,4 +75,8 @@ pygmentsStyle = "pygments"
   [[menu.nav]]
     name = "Twitter"
     url = "https://twitter.com/luchipaint"
+    weight = 4
+  [[menu.nav]]
+    name = "Github"
+    url = "https://github.com/luchipaint/"
     weight = 4

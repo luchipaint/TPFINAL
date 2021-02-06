@@ -1,0 +1,48 @@
+---
+title: Geolocalizar discursos
+author: ~
+date: '2021-02-05'
+slug: leaflet
+categories: []
+tags: ['comunicar', 'visualizar']
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+```{r librerías, include=FALSE}
+library(tidyverse)
+library(polAr)
+library(ggplot2)
+library(leaflet)
+```
+###En la clase 8, que vi grabada porque ese día no tenía internet, el Tucu hizo un ejemplo de mapas interactivos con Yerba Buena, Tucumán. Mandé una foto de la pantalla a mi familia, porque vivimos en Yerba Buena hasta 1994.
+
+###Yo era muy chica para acordarme dónde vivía, pero mi hermano identificó la casa en la capturanque mandé. Y mi madre confirmó.
+
+###Y con esos datos reproduje el gráfico del Tucu y marqué la casa con leaflet.
+
+```{r mapa}
+
+library(polAr)
+library(leaflet)
+library(googlesheets4)
+
+
+discursos_mapa <- read_sheet("https://docs.google.com/spreadsheets/d/1LjyV4saiEPvt9uT4N6_VEgUw1NAA11NzmQYAFfQ1Z28/edit?usp=sharing") %>% 
+  print()
+
+mapa_arg <- get_geo("Argentina")
+
+
+leaflet(mapa_arg) %>% 
+  addPolygons() %>%
+  addProviderTiles(providers$Stamen.Toner) %>% 
+  addMarkers(-58.4852501,-34.515, label = "Quinta de Olivos") %>% 
+  addMarkers(-58.3858376, -34.5981075, label ="CEPAL") %>% 
+  addMarkers(-70.9107307, -33.4724712, label = "Santiago de Chile")
+
+
+```
+

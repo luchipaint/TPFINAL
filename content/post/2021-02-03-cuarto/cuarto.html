@@ -4,15 +4,18 @@ author: ~
 date: '2021-02-03'
 slug: cuarto
 categories: []
-tags: []
+tags: ['leer', 'ordenar', 'transformar', 'visualizar']
 ---
 
 
 
-<pre class="r"><code>library(readr)
-library(tidyverse)
+<p>En este ejercicio, voy a explorar gráficamente algunos indicadores sobre distintas medidas para la libertad en distintos países. En concreto, voy a observar que existe una relación clara entre los índices de libertad humana y los de libertad económica.</p>
+<div id="importo-datos" class="section level3">
+<h3>Importo datos</h3>
+<pre class="r"><code>library(readr) #prendo librería para leer datos
+library(tidyverse) #prendo librería para ordenar y transformar datos
 
-libertad &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&quot;)
+libertad &lt;- readr::read_csv(&quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&quot;) #importo datos
 print(libertad)</code></pre>
 <pre><code>## # A tibble: 1,458 x 10
 ##     anio codigo_iso pais  region libertad_humana… libertad_humana…
@@ -30,11 +33,30 @@ print(libertad)</code></pre>
 ## # … with 1,448 more rows, and 4 more variables:
 ## #   libertad_personal_puntaje &lt;dbl&gt;, libertad_personal_ranking &lt;dbl&gt;,
 ## #   libertad_economica_puntaje &lt;dbl&gt;, libertad_economica_ranking &lt;dbl&gt;</code></pre>
-<pre class="r"><code>libertad2 &lt;- libertad %&gt;% 
-  select(anio, region, codigo_iso, pais, libertad_humana_puntaje, libertad_economica_puntaje) %&gt;% 
-  group_by(pais, region) %&gt;% 
-  summarise(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %&gt;% 
-  drop_na()</code></pre>
+<pre class="r"><code>libertad2 &lt;- libertad %&gt;% #creo una nueva base
+  select(anio, region, pais, libertad_humana_puntaje, libertad_economica_puntaje) %&gt;% #elijo las variables que me interesan
+  group_by(pais, region) %&gt;% #las agrupo por país y por región
+  mutate(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %&gt;% #calculo promedios para cada país
+  drop_na() %&gt;% #suelto los missing values
+  print()</code></pre>
+<pre><code>## # A tibble: 1,269 x 7
+## # Groups:   pais, region [140]
+##     anio region pais  libertad_humana… libertad_econom… promediohumana
+##    &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;            &lt;dbl&gt;            &lt;dbl&gt;          &lt;dbl&gt;
+##  1  2016 Europ… Alba…             7.57             7.54           7.52
+##  2  2016 Orien… Alge…             5.14             4.99           5.14
+##  3  2016 Áfric… Ango…             5.64             5.17           5.50
+##  4  2016 Latin… Arge…             6.47             4.84           6.68
+##  5  2016 Cáuca… Arme…             7.24             7.57           7.41
+##  6  2016 Ocean… Aust…             8.58             7.98           8.61
+##  7  2016 Europ… Aust…             8.41             7.58           8.42
+##  8  2016 Cáuca… Azer…             6.08             6.49           6.15
+##  9  2016 Latin… Baha…             7.4              7.34           7.56
+## 10  2016 Orien… Bahr…             6.85             7.56           6.80
+## # … with 1,259 more rows, and 1 more variable: promedioecon &lt;dbl&gt;</code></pre>
+</div>
+<div id="grafico" class="section level3">
+<h3>Grafico</h3>
 <pre class="r"><code>econyhumana &lt;- ggplot(data = libertad2,
        mapping = aes(x = promediohumana, y = promedioecon, color = pais)) +
   geom_point() +
@@ -47,3 +69,4 @@ print(libertad)</code></pre>
 
 print(econyhumana)</code></pre>
 <p><img src="/post/2021-02-03-cuarto/cuarto_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>

@@ -73,3 +73,4 @@ menu:
     - name: RSS
       url: /index.xml
       weight: 4
+      

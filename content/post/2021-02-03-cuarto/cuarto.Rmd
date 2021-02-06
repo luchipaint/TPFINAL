@@ -4,25 +4,30 @@ author: ~
 date: '2021-02-03'
 slug: cuarto
 categories: []
-tags: []
+tags: ['leer', 'ordenar', 'transformar', 'visualizar']
 ---
+
+En este ejercicio, voy a explorar gráficamente algunos indicadores sobre distintas medidas para la libertad en distintos países. En concreto, voy a observar que existe una relación clara entre los índices de libertad humana y los de libertad económica.
+
+### Importo datos
 
 ```{r, include=TRUE, warning=FALSE, message=FALSE}
 
-library(readr)
-library(tidyverse)
+library(readr) #prendo librería para leer datos
+library(tidyverse) #prendo librería para ordenar y transformar datos
 
-libertad <- readr::read_csv("https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv")
+libertad <- readr::read_csv("https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv") #importo datos
 print(libertad)
 
-libertad2 <- libertad %>% 
-  select(anio, region, codigo_iso, pais, libertad_humana_puntaje, libertad_economica_puntaje) %>% 
-  group_by(pais, region) %>% 
-  summarise(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %>% 
-  drop_na()
-
+libertad2 <- libertad %>% #creo una nueva base
+  select(anio, region, pais, libertad_humana_puntaje, libertad_economica_puntaje) %>% #elijo las variables que me interesan
+  group_by(pais, region) %>% #las agrupo por país y por región
+  mutate(promediohumana = mean(libertad_humana_puntaje), promedioecon = mean(libertad_economica_puntaje)) %>% #calculo promedios para cada país
+  drop_na() %>% #suelto los missing values
+  print()
 ```
 
+### Grafico
 
 ```{r, include=TRUE, warning=FALSE, message=FALSE}
 econyhumana <- ggplot(data = libertad2,

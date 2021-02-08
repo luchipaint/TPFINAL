@@ -1,4 +1,4 @@
-baseURL = "https://example.com"
+baseURL = "https://aprendiendor.netlify.app/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "ApRendiendo R"

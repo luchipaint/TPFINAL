@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>comunicar on ApRendiendo R</title>
-    <link>https://example.com/tags/comunicar/</link>
+    <link>https://aprendiendor.netlify.app/tags/comunicar/</link>
     <description>Recent content in comunicar on ApRendiendo R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/comunicar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aprendiendor.netlify.app/tags/comunicar/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>7. Armar un (pequeño y simple) sitio web</title>
-      <link>https://example.com/2021-02-03-comunicar/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-03-comunicar/</link>
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-03-comunicar/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-03-comunicar/</guid>
       <description>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados acá, pero voy a dejar a continuación algunos detalles más específicos de la configuración.
 Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &amp;quot;about&amp;quot; por &amp;quot;acerca de&amp;quot;. Para eso, modifiqué parámetros en el archivo config.toml:
  Cambiar los colores El theme elegido de toda esta lista fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración.</description>
@@ -20,10 +20,10 @@ Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de l
     
     <item>
       <title>5. Geolocalizar discursos</title>
-      <link>https://example.com/2021-02-05-leaflet/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-05-leaflet/</link>
       <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-05-leaflet/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-05-leaflet/</guid>
       <description>En este ejercicio, me propuse geolocalizar los discursos pronunciados por Alberto Fernández durante el último mes. Para eso, armé una base de datos a partir de la información publicada en el sitio de Casa Rosada y los coordenadas de cada lugar (capturadas a a partir de Google Maps), y usé los mapas de la librería polAr y Leaflet para ubicar marcadores y labels a las direcciones.</description>
     </item>
     

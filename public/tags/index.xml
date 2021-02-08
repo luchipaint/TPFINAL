@@ -2,62 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on ApRendiendo R</title>
-    <link>https://example.com/tags/</link>
+    <link>https://aprendiendor.netlify.app/tags/</link>
     <description>Recent content in Tags on ApRendiendo R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aprendiendor.netlify.app/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>comunicar</title>
-      <link>https://example.com/tags/comunicar/</link>
+      <link>https://aprendiendor.netlify.app/tags/comunicar/</link>
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/comunicar/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/comunicar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>leer</title>
-      <link>https://example.com/tags/leer/</link>
+      <link>https://aprendiendor.netlify.app/tags/leer/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/leer/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/leer/</guid>
       <description></description>
     </item>
     
     <item>
       <title>ordenar</title>
-      <link>https://example.com/tags/ordenar/</link>
+      <link>https://aprendiendor.netlify.app/tags/ordenar/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/ordenar/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/ordenar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Transfomar</title>
-      <link>https://example.com/tags/transfomar/</link>
+      <link>https://aprendiendor.netlify.app/tags/transfomar/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/transfomar/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/transfomar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>visualizar</title>
-      <link>https://example.com/tags/visualizar/</link>
+      <link>https://aprendiendor.netlify.app/tags/visualizar/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/visualizar/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/visualizar/</guid>
       <description></description>
     </item>
     
     <item>
       <title>transformar</title>
-      <link>https://example.com/tags/transformar/</link>
+      <link>https://aprendiendor.netlify.app/tags/transformar/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/transformar/</guid>
+      <guid>https://aprendiendor.netlify.app/tags/transformar/</guid>
       <description></description>
     </item>
     

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on ApRendiendo R</title>
-    <link>https://example.com/post/</link>
+    <link>https://aprendiendor.netlify.app/post/</link>
     <description>Recent content in Posts on ApRendiendo R</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 05 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://aprendiendor.netlify.app/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>7. Armar un (pequeño y simple) sitio web</title>
-      <link>https://example.com/2021-02-03-comunicar/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-03-comunicar/</link>
       <pubDate>Fri, 05 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-03-comunicar/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-03-comunicar/</guid>
       <description>Este blog fue creado gracias a Hugo, Pandoc y Blogdown. Los pasos seguidos están muy bien explicados acá, pero voy a dejar a continuación algunos detalles más específicos de la configuración.
 Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de las palabras visibles en el frontend que venían por default en inglés, como &amp;quot;about&amp;quot; por &amp;quot;acerca de&amp;quot;. Para eso, modifiqué parámetros en el archivo config.toml:
  Cambiar los colores El theme elegido de toda esta lista fue Cayman, pero también me metí a hacerle algunos cambios desde la configuración.</description>
@@ -20,58 +20,58 @@ Argentinizarlo Una de las primeras cosas que hice fue castellanizar algunas de l
     
     <item>
       <title>6. Análisis de discursos</title>
-      <link>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-04-an%C3%A1lisis-de-discursos/</link>
       <pubDate>Tue, 02 Feb 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-04-an%C3%A1lisis-de-discursos/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-04-an%C3%A1lisis-de-discursos/</guid>
       <description>En este posteo, voy a intentar un análisis muy simple de las palabras más utilizadas en dos discursos de apertura de la asamblea legislativa muy particulares:
  el más antiguo, pronunciado por Justo José de Urquiza en 1854 (en ese entonces, ante el llamado &amp;quot;Congreso Legislativo Federal&amp;quot;) el más reciente, pronunciado por Alberto Fernández en 2020  Para hacerlo, me voy a valer de los datos de la librería polAr, que ya cuenta con los discursos tokenizados.</description>
     </item>
     
     <item>
       <title>5. Geolocalizar discursos</title>
-      <link>https://example.com/2021-02-05-leaflet/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-05-leaflet/</link>
       <pubDate>Sat, 30 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-05-leaflet/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-05-leaflet/</guid>
       <description>En este ejercicio, me propuse geolocalizar los discursos pronunciados por Alberto Fernández durante el último mes. Para eso, armé una base de datos a partir de la información publicada en el sitio de Casa Rosada y los coordenadas de cada lugar (capturadas a a partir de Google Maps), y usé los mapas de la librería polAr y Leaflet para ubicar marcadores y labels a las direcciones.</description>
     </item>
     
     <item>
       <title>4. Gráficos paralelos</title>
-      <link>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-04-gr%C3%A1ficos-paralelos/</link>
       <pubDate>Wed, 20 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-04-gr%C3%A1ficos-paralelos/</guid>
       <description>En este posteo, voy a extender la visualización exploratoria del anterior, y crear una gráfico de sets paralelos (o sankey) que muestre la cantidad de países que tienen un índice alto de felicidad (superior a 7) en cada región.
 1. Prendo librerías library(readr) library(tidyverse) library(dplyr)  2. Creo una variable categórica a partir de los datos sobre libertad humana libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) print(libertad) #importo datos ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
     </item>
     
     <item>
       <title>3. Libertad humana y libertad económica</title>
-      <link>https://example.com/cuarto/</link>
+      <link>https://aprendiendor.netlify.app/cuarto/</link>
       <pubDate>Sun, 17 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/cuarto/</guid>
+      <guid>https://aprendiendor.netlify.app/cuarto/</guid>
       <description>En este ejercicio, voy a explorar gráficamente algunos indicadores sobre distintas medidas para la libertad en distintos países. En concreto, voy a observar que existe una relación clara entre los índices de libertad humana y los de libertad económica.
 Importo datos library(readr) #prendo librería para leer datos library(tidyverse) #prendo librería para ordenar y transformar datos libertad &amp;lt;- readr::read_csv(&amp;quot;https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-14/libertad.csv&amp;quot;) #importo datos print(libertad) ## # A tibble: 1,458 x 10 ## anio codigo_iso pais region libertad_humana… libertad_humana… ## &amp;lt;dbl&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;chr&amp;gt; &amp;lt;dbl&amp;gt; &amp;lt;dbl&amp;gt; ## 1 2016 ALB Alba… Europ… 7.</description>
     </item>
     
     <item>
       <title>2. Ordenar direcciones</title>
-      <link>https://example.com/2021-02-06-ordenar-direcciones/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-06-ordenar-direcciones/</link>
       <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-06-ordenar-direcciones/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-06-ordenar-direcciones/</guid>
       <description>1. Prendo librerías library(googlesheets4) #para importar datos gs4_deauth() #para que google sheets no sea interactiva library(tidyverse) #para transformar y ordenar los datos  2. Importo datos muestra2 &amp;lt;- read_sheet(&amp;quot;https://docs.google.com/spreadsheets/d/1tj3bxvmUpv9jzrC0_RIcx5Z5sEUL58amCK5tySFXGhQ/edit?usp=sharing&amp;quot;) %&amp;gt;% print() #importo datos ## # A tibble: 40 x 1 ## dire ## &amp;lt;chr&amp;gt; ## 1 Zuviría 1470, San Miguel , Buenos Aires ## 2 Moreno 359, San Carlos de Bariloche, Río Negro ## 3 III 271, Villa La Arcadia, Buenos Aires ## 4 González Chávez 485, Balcarce, Buenos Aires ## 5 Jacaranda 55, Cariló, Buenos Aires ## 6 Leopoldo Lugones 1945, Ushuaia, Tierra del Fuego, Antártida e Islas del Atlá… ## 7 Tucumán 2728, Mar del Plata, Buenos Aires ## 8 Lisandro De La Torre 411, La Falda, Córdoba ## 9 Los Alamos Sin datos, Orense, Buenos Aires ## 10 Sierra Paileman 335, Las Grutas, Río Negro ## # … with 30 more rows  3.</description>
     </item>
     
     <item>
       <title>1. Calcular diferencia de votos</title>
-      <link>https://example.com/2021-02-03-calcular-diferencia-de-votos/</link>
+      <link>https://aprendiendor.netlify.app/2021-02-03-calcular-diferencia-de-votos/</link>
       <pubDate>Sun, 03 Jan 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/2021-02-03-calcular-diferencia-de-votos/</guid>
+      <guid>https://aprendiendor.netlify.app/2021-02-03-calcular-diferencia-de-votos/</guid>
       <description>Un primer ejercicio para empezar a trabajar con bases de datos es obtener, a partir de la librería polar, los datos de una elección particular en un distrito particular y realizar algunas operaciones a partir de ellos, como calcular la diferencia entre los primeros dos partidos con más votos.
 El primer paso fue prender las librerías:
 library(tidyverse) #para los verbos de dyplir y usar ggplot, entre otras cosas library(polAr) #para obtener los datos de las elecciones Después cree una nueva base de datos (elecciones2003) a partir de los datos de las elecciones presidenciales de 2003, y una nueva (caba2003) en la que:</description>
